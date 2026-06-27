@@ -1,8 +1,9 @@
 {
   "meta": {
-    "version": "4.0",
+    "version": "5.4.1",
     "lastUpdated": null,
     "updateMonth": "2026-06",
+    "lastSyncId": null,
     "dataSource": "data.json",
     "schema": "nasu-lifeplan-data-v1"
   },
@@ -55,6 +56,23 @@
     "balancePdfApplied": false,
     "assetAppliedAt": null,
     "balanceAppliedAt": null
+  },
+  "updateRules": {
+    "requiredSbiCsvCount": 3,
+    "optionalSbiCsvCount": 1,
+    "usStocksSource": "moneyforward",
+    "note": "米国株はマネーフォワード資産内訳PDFで確認するため、SBI CSVは3件以上で更新可能"
+  },
+  "sync": {
+    "githubAutoSyncEnabled": true,
+    "githubApiUrl": null,
+    "lastGithubSyncStatus": null,
+    "lastGithubSyncAt": null,
+    "lastGithubCommitUrl": null,
+    "lastGithubSyncMessage": null,
+    "lastCloudflareStatus": null,
+    "lastCloudflareCheckedAt": null,
+    "lastCloudflareMessage": null
   },
   "custom_events": [],
   "history": []

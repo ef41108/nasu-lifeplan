@@ -1,43 +1,92 @@
-# 那須家ライフプランWebアプリ Ver4.0 運用手順
+# 那須家ライフプランWebアプリ Ver5.4.1 運用手順
 
-## 通常の開き方
+## Ver5.4.1の構成
 
-- 同じフォルダに `index.html` と `data.json` を置きます。
-- ブラウザで `index.html` を開きます。
-- Webサーバー上では起動時に `data.json` を自動で読み込みます。
-- `data.json` が読み込めない場合でも、HTML内の初期データまたはブラウザの補助保存（localStorage）で起動します。
+Ver5.4.1では、静的WebアプリとGitHub更新APIを分離します。
 
-## 毎月の更新手順
+```text
+nasu-lifeplan
+  静的Webアプリ表示用
 
-1. 夫がPCで `index.html` を開きます。
-2. 月次更新タブでSBI CSV、マネーフォワード資産内訳PDF、バランスシートPDFを確認・反映します。
-3. 必要に応じて手入力補正を行います。
-4. データ管理タブ、または月次更新タブの「data.jsonを書き出す」ボタンで更新済み `data.json` を保存します。
-5. 共有URL側の `data.json` を新しいファイルに差し替えます。
+nasu-lifeplan-api
+  GitHub data.json更新API用
+```
 
-## 共有URLに置く場合の手順
+既存の `nasu-lifeplan` はStatic Assets専用のため、Secretsを登録できません。Secretsは必ず `nasu-lifeplan-api` 側に登録します。
 
-- GitHub Pages、Netlifyなどに `index.html` と `data.json` を配置します。
-- Ver4.0では基本的に `index.html` は固定し、毎月 `data.json` だけを差し替える運用にします。
-- 夫婦で完全に同じ最新データを見るには、夫が月次更新後に書き出した `data.json` を共有URL側へ反映してください。
+## 毎月の更新方法
 
-## 妻が使う範囲
+1. CSV追加
+2. PDF追加
+3. 更新開始
+4. 妻スマホ確認
 
-- ホームで現在の状況を確認します。
-- シミュレーションタブで前提変更を試せます。
-- 手動イベント追加で旅行・住宅・教育などの支出予定を試せます。
-- 月次更新作業は通常行いません。
+終了です。
 
-## 夫が更新する範囲
+## 初回設定
 
-- 月次更新タブでSBI CSVとマネーフォワードPDFの反映を行います。
-- 更新後に `data.json` を書き出します。
-- 共有URL運用では `data.json` を差し替えて、夫婦が同じ最新データを見られるようにします。
+1. Cloudflare Workers & Pagesで新しいWorkerを作成
+2. Worker名を `nasu-lifeplan-api` にする
+3. `worker.js` を貼り付けてデプロイ
+4. `nasu-lifeplan-api` 側にSecretsを設定する
+5. アプリ画面の詳細設定にAPI URLを入力する
+6. 更新APIキーを入力する
+7. GitHub自動反映をONにする
 
-## セキュリティ注意点
+## 入力するAPI URL例
 
-- `data.json` には家計・資産情報が含まれます。
-- 完全公開URL、検索に出る場所、第三者が見られる場所への配置は避けてください。
-- このアプリは自動ログイン連携を行いません。
-- ID、パスワード、金融機関ログイン情報は扱いません。
-- クラウドJSON同期やログイン機能は今回実装していません。
+```text
+https://nasu-lifeplan-api.ef41108.workers.dev/api/update-data
+```
+
+## nasu-lifeplan-apiに設定するSecrets
+
+- `GITHUB_TOKEN`
+- `GITHUB_OWNER`
+- `GITHUB_REPO`
+- `GITHUB_BRANCH`
+- `GITHUB_DATA_PATH`
+- `UPDATE_API_KEY`
+
+GitHubトークンはブラウザには保存しません。ブラウザで入力するのはAPI URLと更新APIキーだけです。APIキーは保存するかどうかを選べます。
+
+## 必要なファイル
+
+- SBI CSV：3ファイル以上
+- マネーフォワード資産内訳PDF：1ファイル
+- マネーフォワードバランスシートPDF：1ファイル
+
+SBI CSV 4件目は任意です。米国株はCSVではなく、マネーフォワード資産内訳PDFで確認します。
+
+## 更新開始で自動実行されること
+
+- CSV解析
+- PDF解析
+- 更新前後比較
+- history保存
+- AIコメント更新
+- 家計健康診断更新
+- 更新完了レポート生成
+- GitHub自動反映
+- Cloudflare反映確認
+- 更新完了画面表示
+
+## Cloudflare反映確認
+
+更新開始時に `meta.lastSyncId` を発行し、GitHubへ送る `data.json` にも保存します。
+
+公開URLの `data.json` を取得し、`remote.meta.lastSyncId === local.meta.lastSyncId` の場合だけ「Cloudflare反映済み」と表示します。`version` や更新月だけでは成功扱いにしません。
+
+## API URL未設定時
+
+GitHub更新API URLが未設定の場合、GitHub自動更新は実行しません。
+
+画面には「GitHub更新API URLが未設定です。nasu-lifeplan-api のURLを入力してください。」と表示します。
+
+その場合でも「data.jsonを書き出す」「手動アップロードはこちら」は使えます。
+
+## 困った時
+
+GitHub更新に失敗した場合は「手動アップロードはこちら」から `data.json` を書き出し、GitHubに手動アップロードできます。
+
+Cloudflareだけ反映待ちの場合は、GitHub更新済みです。少し待ってから共有URLを再確認してください。

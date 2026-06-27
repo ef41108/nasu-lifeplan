@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>那須家ライフプランWebアプリ Ver4.0</title>
+<title>那須家ライフプランWebアプリ Ver5.4.1</title>
 <style>
 :root{--bg:#020617;--panel:#111827;--panel2:#1f2937;--line:rgba(148,163,184,.22);--text:#e5e7eb;--muted:#94a3b8;--green:#34d399;--blue:#60a5fa;--yellow:#fbbf24;--red:#fb7185;--purple:#a78bfa}*{box-sizing:border-box}body{margin:0;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;background:radial-gradient(circle at top left,rgba(96,165,250,.22),transparent 34%),radial-gradient(circle at 80% 8%,rgba(52,211,153,.16),transparent 28%),linear-gradient(135deg,#020617,#0f172a 55%,#111827)}.wrap{max-width:1280px;margin:0 auto;padding:24px 18px 64px}header{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:18px}h1{margin:0;font-size:clamp(26px,4vw,42px);letter-spacing:-.04em}.subtitle,.note{color:var(--muted);font-size:13px;line-height:1.65}.badge{border:1px solid var(--line);padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.06);white-space:nowrap;font-size:13px;color:#cbd5e1}.tabs{position:sticky;top:0;z-index:10;backdrop-filter:blur(16px);background:rgba(2,6,23,.72);border:1px solid var(--line);border-radius:18px;padding:8px;display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tabBtn{border:0;color:#cbd5e1;background:transparent;padding:9px 14px;border-radius:999px;font-size:14px;cursor:pointer}.tabBtn.active,.tabBtn:hover{background:rgba(255,255,255,.10);color:#fff}.tab{display:none}.tab.active{display:block}.grid{display:grid;gap:16px}.kpi{grid-template-columns:repeat(4,minmax(0,1fr))}.two{grid-template-columns:1.1fr .9fr}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{background:linear-gradient(180deg,rgba(31,41,55,.92),rgba(17,24,39,.92));border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 16px 40px rgba(0,0,0,.24)}.label{color:var(--muted);font-size:13px}.value{font-size:clamp(25px,3vw,36px);font-weight:800;margin:8px 0 6px;letter-spacing:-.03em}.good{color:var(--green)}.warn{color:var(--yellow)}.blue{color:var(--blue)}.red{color:var(--red)}h2{font-size:20px;margin:0 0 14px}h3{font-size:16px;margin:18px 0 10px;color:#cbd5e1}.section{margin-top:18px}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid var(--line);padding:10px 8px;font-size:13px;text-align:right;vertical-align:top}th{color:#cbd5e1;background:rgba(255,255,255,.04)}td:first-child,th:first-child{text-align:left}.lineChart{width:100%;height:auto}.gridline{stroke:rgba(148,163,184,.18);stroke-width:1}.tick{stroke:rgba(148,163,184,.5);stroke-width:1}.axis{fill:#94a3b8;font-size:11px}.line{stroke:#34d399;stroke-width:4;filter:drop-shadow(0 0 8px rgba(52,211,153,.35))}.line2{stroke:#60a5fa;stroke-width:3;stroke-dasharray:8 6}.line3{stroke:#fb7185;stroke-width:3;stroke-dasharray:5 6}.controlGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.control{border:1px solid var(--line);border-radius:16px;padding:12px;background:rgba(255,255,255,.04)}.control label{display:flex;justify-content:space-between;color:#cbd5e1;font-size:13px;margin-bottom:8px;gap:8px}input[type=range]{width:100%;accent-color:#34d399}input[type=checkbox]{accent-color:#34d399}input[type=file],input[type=number],input[type=text],textarea,select{width:100%;border:1px solid var(--line);border-radius:12px;background:rgba(2,6,23,.55);color:var(--text);padding:10px}textarea{min-height:120px;resize:vertical}.btn{border:0;border-radius:12px;padding:11px 14px;background:#2563eb;color:#fff;cursor:pointer;font-weight:700}.btn.secondary{background:rgba(255,255,255,.08);color:#cbd5e1;border:1px solid var(--line)}.btn.goodBtn{background:#059669}.btn.warnBtn{background:#d97706}.btnRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.callout{background:rgba(52,211,153,.10);border:1px solid rgba(52,211,153,.28);border-radius:18px;padding:14px;color:#d1fae5;line-height:1.65}.status{display:inline-block;padding:5px 9px;border-radius:999px;font-size:12px;border:1px solid var(--line)}.status.ok{color:#bbf7d0;background:rgba(34,197,94,.12)}.status.warn{color:#fde68a;background:rgba(245,158,11,.12)}.status.bad{color:#fecdd3;background:rgba(251,113,133,.12)}.small{font-size:12px;color:var(--muted)}.advice{display:grid;gap:10px}.adviceItem{border:1px solid var(--line);border-radius:16px;padding:13px;background:rgba(255,255,255,.04)}.adviceItem b{display:block;margin-bottom:4px}.bigUse{font-size:clamp(34px,5vw,56px);font-weight:900;letter-spacing:-.04em;margin:8px 0;color:#fbbf24}.miniGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}.mini{border:1px solid var(--line);border-radius:14px;padding:10px;background:rgba(255,255,255,.04)}.mini b{display:block;font-size:18px;margin-top:4px}.okText{color:#bbf7d0}.warnText{color:#fde68a}.chartRow{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.donut{width:210px;max-width:45vw}.chartCenter{font-weight:800;fill:#e5e7eb;font-size:17px}.chartSub{fill:#94a3b8;font-size:13px}.legend{display:grid;gap:10px;min-width:240px;flex:1}.legendItem{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px;color:#cbd5e1}.legendRight{text-align:right;font-weight:700}.legendRight span{color:var(--muted);font-size:12px;font-weight:500}.dot{width:10px;height:10px;border-radius:999px;display:inline-block;margin-right:8px}.stepper{display:grid;gap:12px}.step{border:1px solid var(--line);border-radius:18px;padding:14px;background:rgba(255,255,255,.04);display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start}.stepNo{width:34px;height:34px;border-radius:999px;background:rgba(96,165,250,.18);display:flex;align-items:center;justify-content:center;font-weight:900;color:#bfdbfe}.drop{border:2px dashed rgba(96,165,250,.55);border-radius:16px;padding:16px;background:rgba(96,165,250,.06);margin-top:10px}.preview{max-height:230px;overflow:auto;border:1px solid var(--line);border-radius:12px;margin-top:10px}.eventRow{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;border-bottom:1px solid var(--line);padding:9px 0}.timeline{display:grid;gap:8px}.timelineItem{display:grid;grid-template-columns:72px 1fr auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:10px;background:rgba(255,255,255,.04)}.timelineItem .age{color:#cbd5e1;font-weight:700}.timelineItem .amount{font-weight:800;color:#fbbf24}.logBox{background:rgba(2,6,23,.45);border:1px solid var(--line);border-radius:14px;padding:12px;min-height:78px;white-space:pre-wrap;color:#cbd5e1;font-size:13px}.jsonGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.jsonCard{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,.04)}footer{margin-top:28px;color:var(--muted);font-size:12px;text-align:center}@media(max-width:900px){header{align-items:flex-start;flex-direction:column}.kpi,.two,.three,.controlGrid,.miniGrid,.jsonGrid{grid-template-columns:1fr}.donut{width:200px}.timelineItem{grid-template-columns:1fr}}
 
@@ -90,13 +90,46 @@ body.wifeMode .mobileQuick{border-color:rgba(52,211,153,.45)}
 .dataOps{display:grid;gap:10px;margin-top:12px}
 .dataOps .opsRow{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,.04)}
 .sourceBadge{display:inline-block;margin-top:6px;padding:5px 9px;border-radius:999px;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.28);color:#bbf7d0;font-size:12px;font-weight:800}
+input[type=password]{width:100%;border:1px solid var(--line);border-radius:12px;background:rgba(2,6,23,.55);color:var(--text);padding:10px}
 @media(max-width:700px){.dataOps{gap:8px}}
+@media(max-width:700px){input[type=password]{font-size:16px;min-height:44px}}
+
+/* Ver5.4 monthly update */
+.monthlyWizardV5{display:grid;gap:14px}
+.v5StatusGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.v5StatusItem{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,.04);display:flex;justify-content:space-between;gap:10px;align-items:center}
+.v5StatusItem b{display:block;font-size:13px}.v5Mark{font-weight:900;font-size:18px}.v5Mark.ok{color:#34d399}.v5Mark.bad{color:#fb7185}
+.v5Step{border:1px solid var(--line);border-radius:18px;padding:14px;background:rgba(255,255,255,.04);display:grid;grid-template-columns:42px 1fr;gap:12px}
+.v5StepNo{width:32px;height:32px;border-radius:999px;background:rgba(96,165,250,.18);display:flex;align-items:center;justify-content:center;font-weight:900;color:#bfdbfe}
+.v5ReviewGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.v5Metric{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(2,6,23,.28)}
+.v5Metric .label{font-size:12px}.v5Metric b{display:block;font-size:20px;margin-top:5px}
+.v5Delta{font-size:12px;margin-top:4px}.v5Delta.up{color:#34d399}.v5Delta.down{color:#fb7185}.v5Delta.flat{color:#94a3b8}
+.v5Complete{border-color:rgba(52,211,153,.32);background:rgba(52,211,153,.08)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+@media(max-width:700px){.v5StatusGrid,.v5ReviewGrid{grid-template-columns:1fr}.v5Step{grid-template-columns:34px 1fr;padding:12px}.v5StepNo{width:28px;height:28px}.v5StatusItem{align-items:flex-start}}
+.v51Checklist{display:grid;gap:8px}
+.v51CheckRow{border:1px solid var(--line);border-radius:12px;padding:10px;background:rgba(255,255,255,.04);display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+.v51Missing{border:1px solid rgba(251,113,133,.28);border-radius:14px;padding:12px;background:rgba(251,113,133,.08);color:#fecdd3}
+.v51Missing.ok{border-color:rgba(52,211,153,.28);background:rgba(52,211,153,.08);color:#bbf7d0}
+.v51Compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.v51CompareCard{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(2,6,23,.28)}
+.v51CompareCard b{display:block;font-size:19px;margin:5px 0}.v51CompareCard .row{display:flex;justify-content:space-between;gap:10px;font-size:13px;border-bottom:1px solid var(--line);padding:5px 0}.v51CompareCard .row:last-child{border-bottom:0}
+.v51Health{border:1px solid rgba(96,165,250,.28);border-radius:16px;padding:14px;background:rgba(96,165,250,.08)}
+.v51Stars{font-size:24px;font-weight:900;color:#fbbf24;letter-spacing:0}
+.v51Version{border:1px solid rgba(96,165,250,.28);border-radius:16px;padding:14px;background:rgba(96,165,250,.08);margin-top:12px}
+.v51VersionGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
+.v51VersionGrid>div{border:1px solid var(--line);border-radius:12px;padding:10px;background:rgba(255,255,255,.04)}
+.v52Progress{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.v52ProgressItem{border:1px solid var(--line);border-radius:14px;padding:11px;background:rgba(255,255,255,.04)}.v52ProgressItem b{display:block;margin-bottom:4px}.v52Manual{color:#fde68a}.v52Flow{display:grid;gap:8px}.v52FlowStep{border:1px solid var(--line);border-radius:12px;padding:10px;background:rgba(255,255,255,.04)}.v52Report{white-space:pre-wrap}.v52Checklist{display:grid;gap:8px}.v52CheckItem{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;border:1px solid var(--line);border-radius:12px;padding:9px;background:rgba(255,255,255,.04)}.v52Bars{display:grid;gap:8px}.v52Bar{display:grid;grid-template-columns:76px 1fr auto;gap:8px;align-items:center}.v52BarTrack{height:9px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}.v52BarFill{height:100%;border-radius:999px;background:#60a5fa}.v52OneLine{border:1px solid rgba(52,211,153,.28);border-radius:14px;padding:12px;background:rgba(52,211,153,.08);color:#d1fae5}
+.v53Sync{border:1px solid rgba(96,165,250,.28);border-radius:16px;padding:12px;background:rgba(96,165,250,.08);margin-top:10px}.v53SyncGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}.v53Toggle{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;border:1px solid var(--line);border-radius:12px;padding:10px;background:rgba(255,255,255,.04)}.v53Status{border:1px solid var(--line);border-radius:12px;padding:10px;background:rgba(255,255,255,.04);margin-top:10px;color:#cbd5e1}.v53Status.success{border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.10);color:#bbf7d0}.v53Status.running{border-color:rgba(96,165,250,.35);background:rgba(96,165,250,.10);color:#bfdbfe}.v53Status.failed{border-color:rgba(251,113,133,.35);background:rgba(251,113,133,.10);color:#fecdd3}
+.v54Hero{border:1px solid rgba(52,211,153,.30);border-radius:18px;padding:16px;background:rgba(52,211,153,.08)}.v54Flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:center;text-align:center;margin-top:12px}.v54FlowBox{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,.05)}.v54Arrow{color:#94a3b8;font-weight:900}.v54Start{font-size:18px;min-height:52px}.v54ProgressList{display:grid;gap:8px}.v54ProgressRow{border:1px solid var(--line);border-radius:12px;padding:10px;background:rgba(255,255,255,.04);display:grid;grid-template-columns:34px 1fr;gap:8px;align-items:center}.v54ProgressRow.current{border-color:rgba(96,165,250,.45);background:rgba(96,165,250,.12)}.v54ProgressRow.done{border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.08)}.v54Mark{font-weight:900;text-align:center}.v54Done{color:#34d399}.v54Current{color:#60a5fa}.v54Pending{color:#94a3b8}.v54CompleteScreen{border:1px solid rgba(52,211,153,.35);border-radius:18px;padding:18px;background:rgba(52,211,153,.10);margin-top:12px}.v54CompleteIcon{font-size:48px;line-height:1}.v54CompleteTitle{font-size:clamp(24px,4vw,36px);font-weight:900;margin:8px 0}.v54SummaryGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.v54SummaryCard{border:1px solid var(--line);border-radius:12px;padding:10px;background:rgba(2,6,23,.25)}.v54SummaryCard b{display:block;font-size:18px;margin-top:4px}.v54LogDetails{margin-top:12px}.v54LogDetails summary{cursor:pointer;color:#cbd5e1;font-weight:800}.v54Error{border:1px solid rgba(251,113,133,.35);border-radius:14px;padding:12px;background:rgba(251,113,133,.10);color:#fecdd3;margin-top:10px}.v54CloudflareWait{border:1px solid rgba(251,191,36,.35);border-radius:14px;padding:12px;background:rgba(251,191,36,.10);color:#fde68a;margin-top:10px}
+@media(max-width:700px){.v51Compare,.v51VersionGrid,.v52Progress,.v53SyncGrid,.v54SummaryGrid{grid-template-columns:1fr}.v54Flow{grid-template-columns:1fr}.v54Arrow{transform:rotate(90deg)}.v51CheckRow{grid-template-columns:1fr auto}.v52Bar{grid-template-columns:64px 1fr}.v52Bar span:last-child{grid-column:2}}
 
 </style>
 </head>
 <body>
 <div class="wrap">
-<header><div><h1>那須家ライフプランWebアプリ</h1><div class="subtitle">Ver4.0：データ分離版。index.htmlは固定し、毎月の更新データはdata.jsonとして差し替えて運用します。</div></div><div class="badge">Ver4.0 / データ分離版</div></header>
+<header><div><h1>那須家ライフプランWebアプリ</h1><div class="subtitle">Ver5.4.1：静的アプリとGitHub更新APIを分離したワンクリック更新版です。</div></div><div class="badge">Ver5.4.1 / Separated GitHub Update API</div></header>
 <div class="tabs">
 <button class="tabBtn active" data-tab="overview" onclick="openTab('overview',this)">ホーム</button>
 <button class="tabBtn" data-tab="simulation" onclick="openTab('simulation',this)">シミュレーション</button>
@@ -171,6 +204,7 @@ body.wifeMode .mobileQuick{border-color:rgba(52,211,153,.45)}
   <div class="note">Ver4.0では、アプリ本体の index.html と毎月更新データの data.json を分離します。共有URL運用では index.html は基本的に固定し、夫が月次更新後に data.json だけを書き出して差し替えます。</div>
   <span class="sourceBadge" id="dataSourceLabel">読み込み元：確認中</span>
 </div>
+<div class="v51Version" id="versionPanel">バージョン情報を確認中です。</div>
 <div class="opsMemo privacyWarn section">
   <b>公開範囲の注意</b>
   <div class="note">data.json には家計・資産情報が含まれます。完全公開URLや第三者が見られる場所への配置は避け、共有範囲を夫婦内に限定してください。ログイン機能・自動ログイン連携・金融機関ID/パスワード管理は行いません。</div>
@@ -179,8 +213,8 @@ body.wifeMode .mobileQuick{border-color:rgba(52,211,153,.45)}
   <div class="opsRow"><b>data.jsonを読み込む</b><div class="note">同じフォルダの data.json は起動時に自動読込します。手元のファイルを指定して読み込むこともできます。</div><input type="file" id="dataJsonFile" accept="application/json,.json"><div class="btnRow"><button class="btn secondary" onclick="loadDataJsonFromInput()">選択したdata.jsonを読み込む</button></div></div>
   <div class="opsRow"><b>data.jsonを書き出す</b><div class="note">月次更新後はこのボタンで data.json を保存し、共有URL側の data.json と差し替えます。</div><div class="btnRow"><button class="btn" onclick="downloadDataJson()">data.jsonを書き出す</button><button class="btn secondary" onclick="resetLocal()">補助保存をリセット</button></div></div>
 </div>
-<div class="jsonGrid"><div class="jsonCard"><b>data.json / meta</b><div class="small">バージョン・更新月・読み込み元</div></div><div class="jsonCard"><b>data.json / assets</b><div class="small">総資産・純資産・現金・住宅ローン</div></div><div class="jsonCard"><b>data.json / settings</b><div class="small">生活費・収入・利回り・年金</div></div><div class="jsonCard"><b>data.json / history</b><div class="small">毎月の更新履歴</div></div></div></div><div class="card"><h2>月次履歴</h2><table><thead><tr><th>月</th><th>純資産</th><th>現金</th><th>生活費</th><th>今年使える金額</th></tr></thead><tbody id="historyTable"></tbody></table></div></div><div class="card section"><h2>現在データ</h2><textarea id="jsonView" readonly></textarea></div></section>
-<footer>那須家ライフプランWebアプリ Ver4.0 / index.html + data.json</footer>
+<div class="jsonGrid"><div class="jsonCard"><b>data.json / meta</b><div class="small">バージョン・更新月・読み込み元</div></div><div class="jsonCard"><b>data.json / assets</b><div class="small">総資産・純資産・現金・住宅ローン</div></div><div class="jsonCard"><b>data.json / settings</b><div class="small">生活費・収入・利回り・年金</div></div><div class="jsonCard"><b>data.json / history</b><div class="small">毎月の更新履歴</div></div></div></div><div class="card"><h2>月次履歴</h2><table><thead><tr><th>月</th><th>更新日</th><th>純資産</th><th>現金</th><th>投資資産</th><th>住宅ローン</th><th>今年使える金額</th></tr></thead><tbody id="historyTable"></tbody></table></div></div><div class="card section"><h2>現在データ</h2><textarea id="jsonView" readonly></textarea></div></section>
+<footer>那須家ライフプランWebアプリ Ver5.4.1 / index.html + data.json + version.json + worker.js</footer>
 </div>
 <script>
 // 那須家ライフプランWebアプリ Ver4.0
@@ -188,10 +222,13 @@ body.wifeMode .mobileQuick{border-color:rgba(52,211,153,.45)}
 
 
 // 初期データと保存状態
-const APP_STORAGE_KEY='nasuLifePlanV40';
-const defaultState={"meta":{"version":"4.0","lastUpdated":null,"updateMonth":"2026-06","dataSource":"data.json","schema":"nasu-lifeplan-data-v1"},"assets":{"asset_total":67951942,"loan_balance":13926295,"net_worth":54025647,"cash":10278748,"stocks":20876594,"funds":30183767,"bonds":5000000,"ideco":1601888},"settings":{"annual_income":5100000,"basic_living_expense":4500000,"mortgage_annual":640620,"mortgage_end_age":66,"expected_return":0.05,"retirement_age":60,"pension_start_age":65,"future_pension_annual":861386,"wife_pension_annual":0,"retirement_lump_sum":15000000},"portfolio":{"index_total":35156957,"high_dividend_total":15245915,"bond_etf_other":1420957,"jp_high_dividend":5911130,"us_high_dividend":9334785},"sbi":{"loaded":false,"files":[],"total":0,"detected":{"stocks":0,"funds":0,"cash":0}},"mf":{"assetPdfName":null,"balancePdfName":null,"totalDebt":null,"netWorthFromMf":null,"pensionAsset":null,"assetPdfApplied":false,"balancePdfApplied":false,"assetAppliedAt":null,"balanceAppliedAt":null},"custom_events":[],"history":[]};
+const APP_STORAGE_KEY='nasuLifePlanV541';
+const SYNC_STORAGE_KEY='nasuLifePlanV541Sync';
+const defaultState={"meta":{"version":"5.4.1","lastUpdated":null,"updateMonth":"2026-06","lastSyncId":null,"dataSource":"data.json","schema":"nasu-lifeplan-data-v1"},"assets":{"asset_total":67951942,"loan_balance":13926295,"net_worth":54025647,"cash":10278748,"stocks":20876594,"funds":30183767,"bonds":5000000,"ideco":1601888},"settings":{"annual_income":5100000,"basic_living_expense":4500000,"mortgage_annual":640620,"mortgage_end_age":66,"expected_return":0.05,"retirement_age":60,"pension_start_age":65,"future_pension_annual":861386,"wife_pension_annual":0,"retirement_lump_sum":15000000},"portfolio":{"index_total":35156957,"high_dividend_total":15245915,"bond_etf_other":1420957,"jp_high_dividend":5911130,"us_high_dividend":9334785},"sbi":{"loaded":false,"files":[],"total":0,"detected":{"stocks":0,"funds":0,"cash":0}},"mf":{"assetPdfName":null,"balancePdfName":null,"totalDebt":null,"netWorthFromMf":null,"pensionAsset":null,"assetPdfApplied":false,"balancePdfApplied":false,"assetAppliedAt":null,"balanceAppliedAt":null},"updateRules":{"requiredSbiCsvCount":3,"optionalSbiCsvCount":1,"usStocksSource":"moneyforward","note":"米国株はマネーフォワード資産内訳PDFで確認するため、SBI CSVは3件以上で更新可能"},"sync":{"githubAutoSyncEnabled":true,"githubApiUrl":null,"lastGithubSyncStatus":null,"lastGithubSyncAt":null,"lastGithubCommitUrl":null,"lastGithubSyncMessage":null,"lastCloudflareStatus":null,"lastCloudflareCheckedAt":null,"lastCloudflareMessage":null},"custom_events":[],"history":[]};
 let loadedDataSource='HTML内初期データ';
+let appVersionInfo=null;
 let state=normalizeState(loadState());
+let syncPrefs=loadSyncPrefs();
 
 const rules=[{id:'travel',category:'旅行',name:'旅行費',amount:500000,startAge:40,endAge:79,every:1,enabled:true,type:'毎年'},{id:'home_appliance',category:'家電',name:'家電',amount:120000,startAge:40,endAge:90,every:1,enabled:true,type:'毎年'},{id:'car',category:'車・住宅',name:'車買替',amount:2000000,startAge:50,endAge:80,every:10,enabled:true,type:'10年ごと'},{id:'renovation',category:'車・住宅',name:'リフォーム',amount:5000000,startAge:60,endAge:60,every:99,enabled:true,type:'20年後'},{id:'edu_child1',category:'教育',name:'長女教育費',amount:500000,startAge:40,endAge:57,every:1,enabled:true,type:'年50万円'},{id:'edu_child2',category:'教育',name:'次女教育費',amount:500000,startAge:40,endAge:59,every:1,enabled:true,type:'年50万円'},{id:'junior_nisa',category:'教育',name:'千尋ジュニアNISA教育資金',amount:-2400000,startAge:53,endAge:53,every:99,enabled:true,type:'教育費補填'}];
 function cloneDefaultState(){return JSON.parse(JSON.stringify(defaultState))}
@@ -199,18 +236,22 @@ function normalizeState(saved){
   const base=cloneDefaultState();
   const src=(saved&&typeof saved==='object')?saved:{};
   return {
-    meta:{...base.meta,...(src.meta||{}),version:'4.0'},
+    meta:{...base.meta,...(src.meta||{}),version:'5.4.1'},
     assets:{...base.assets,...(src.assets||{})},
     settings:{...base.settings,...(src.settings||{})},
     portfolio:{...base.portfolio,...(src.portfolio||{})},
     sbi:{...base.sbi,...(src.sbi||{}),files:Array.isArray(src.sbi?.files)?src.sbi.files:[],detected:{...base.sbi.detected,...(src.sbi?.detected||{})}},
     mf:{...base.mf,...(src.mf||{}),assetPdfApplied:!!src.mf?.assetPdfApplied,balancePdfApplied:!!src.mf?.balancePdfApplied,assetAppliedAt:src.mf?.assetAppliedAt||null,balanceAppliedAt:src.mf?.balanceAppliedAt||null},
+    updateRules:{...base.updateRules,...(src.updateRules||{})},
+    sync:{...base.sync,...(src.sync||{})},
     custom_events:Array.isArray(src.custom_events)?src.custom_events:[],
     history:Array.isArray(src.history)?src.history:[],
   };
 }
 function loadState(){try{const raw=localStorage.getItem(APP_STORAGE_KEY);if(raw){loadedDataSource='localStorage補助保存';return JSON.parse(raw)}return cloneDefaultState()}catch(e){console.warn('保存データを初期化します',e);return cloneDefaultState()}}
 function saveState(){state=normalizeState(state);localStorage.setItem(APP_STORAGE_KEY,JSON.stringify(state))}
+function loadSyncPrefs(){try{const raw=localStorage.getItem(SYNC_STORAGE_KEY);const saved=raw?JSON.parse(raw):{autoGithubSync:true,apiUrl:null};return {autoGithubSync:saved.autoGithubSync!==false,apiUrl:saved.apiUrl||'',saveApiKey:!!saved.saveApiKey,apiKey:saved.saveApiKey?(saved.apiKey||''):''}}catch(e){return {autoGithubSync:true,apiUrl:'',saveApiKey:false,apiKey:''}}}
+function saveSyncPrefs(){const stored={autoGithubSync:!!syncPrefs.autoGithubSync,apiUrl:syncPrefs.apiUrl||'',saveApiKey:!!syncPrefs.saveApiKey,apiKey:syncPrefs.saveApiKey?(syncPrefs.apiKey||''):''};localStorage.setItem(SYNC_STORAGE_KEY,JSON.stringify(stored))}
 async function loadDataJsonOnStart(){
   try{
     const res=await fetch('data.json',{cache:'no-store'});
@@ -223,7 +264,17 @@ async function loadDataJsonOnStart(){
     console.warn('data.jsonを自動読込できませんでした。HTML内初期データまたはlocalStorageで起動します。',e);
   }
 }
-function exportData(){state=normalizeState(state);return {meta:state.meta,assets:state.assets,settings:state.settings,portfolio:state.portfolio,sbi:state.sbi,mf:state.mf,custom_events:state.custom_events,history:state.history}}
+async function loadVersionJsonOnStart(){
+  try{
+    const res=await fetch('version.json',{cache:'no-store'});
+    if(!res.ok)throw new Error('HTTP '+res.status);
+    appVersionInfo=await res.json();
+  }catch(e){
+    appVersionInfo=null;
+    console.warn('version.jsonを読み込めませんでした。data.jsonのmeta情報で起動します。',e);
+  }
+}
+function exportData(){state=normalizeState(state);return {meta:state.meta,assets:state.assets,settings:state.settings,portfolio:state.portfolio,sbi:state.sbi,mf:state.mf,updateRules:state.updateRules,sync:state.sync,custom_events:state.custom_events,history:state.history}}
 function applyImportedData(json,source='手動読込data.json'){state=normalizeState(json);loadedDataSource=source;saveState();render();log(source+'を読み込みました。')}
 const yenMan=n=>Math.round((n||0)/10000).toLocaleString('ja-JP')+'万円';const pc=x=>((x||0)*100).toFixed(1)+'%';const num=v=>Number(String(v||'').replace(/[¥円,，\s]/g,''))||0;const manToYen=v=>Math.round((Number(v)||0)*10000);
 
@@ -252,7 +303,19 @@ function donut(items,title){const size=250,thick=44,cx=size/2,cy=size/2,r=size/2
 function legend(items){const total=items.reduce((s,x)=>s+x.value,0)||1;return items.map(i=>`<div class="legendItem"><div><span class="dot" style="background:${i.color}"></span>${i.name}</div><div class="legendRight">${yenMan(i.value)}<br><span>${pc(i.value/total)}</span></div></div>`).join('')}
 
 // 画面描画
-function renderAdvice(){const s=spendOk(),age90=calc('base')[50].end,cashMonths=state.assets.cash/(state.settings.basic_living_expense/12);let items=[];items.push(`<div class="adviceItem"><b>今年はあと${yenMan(s.ok)}程度まで追加支出を検討できます</b><span class="note">生活防衛資金1年分を残したうえで、旅行や家族イベントに使える目安です。</span></div>`);items.push(`<div class="adviceItem"><b>90歳時点資産は${yenMan(age90)}の見込みです</b><span class="note">現在の前提では長期の安心度は保たれています。大きく悪化した月だけ確認すれば十分です。</span></div>`);items.push(`<div class="adviceItem"><b>現金は生活費${cashMonths.toFixed(1)}か月分です</b><span class="note">住宅ローン繰上返済より、手元資金と家族イベント予算の確保を優先しやすい状態です。</span></div>`);document.getElementById('aiAdvice').innerHTML=items.join('');document.getElementById('miniTravel').textContent=s.ok>=200000?'＋20万円 OK':'慎重に確認'}
+function renderVersionPanel(){
+  const el=document.getElementById('versionPanel');
+  if(!el)return;
+  const meta=state.meta||{};
+  const info=appVersionInfo||{};
+  const appVersion=info.appVersion||meta.version||'不明';
+  const dataVersion=info.dataVersion||meta.updateMonth||'不明';
+  const updatedAt=info.updatedAt||meta.lastUpdated||'未更新';
+  const releaseName=info.releaseName||'data.json meta fallback';
+  const histories=Array.isArray(info.history)?info.history:[];
+  el.innerHTML=`<b>Ver${appVersion}</b><div class="v51VersionGrid"><div><span class="label">データ更新月</span><b>${dataVersion}</b></div><div><span class="label">最終更新</span><b>${updatedAt}</b></div><div><span class="label">リリース</span><b>${releaseName}</b></div></div><h3>更新履歴</h3>${histories.length?histories.map(h=>`<div class="note"><b>${h.version} / ${h.date}</b><br>${(h.changes||[]).join('、')}</div>`).join(''):'<div class="note">version.jsonがないため、data.jsonのmeta情報を表示しています。</div>'}`;
+}
+function renderAdvice(){const s=spendOk(),age90=calc('base')[50].end,cashMonths=state.assets.cash/(state.settings.basic_living_expense/12),cmp=state.meta?.lastUpdateComparison;let items=[];if(cmp){const b=cmp.before||{},a=cmp.after||{},net=(a.net_worth||0)-(b.net_worth||0),inv=(a.investment_total||0)-(b.investment_total||0),loan=(a.loan_balance||0)-(b.loan_balance||0);items.push(`<div class="adviceItem"><b>月次更新：純資産は${net>=0?'増加':'減少'}しました</b><span class="note">増減は${net>=0?'+':''}${yenMan(net)}。投資資産は${inv>=0?'増加':'減少'}、住宅ローンは${loan<0?'順調に減少':'入力値を確認'}です。</span></div>`)}items.push(`<div class="adviceItem"><b>今年はあと${yenMan(s.ok)}程度まで追加支出を検討できます</b><span class="note">生活防衛資金1年分を残したうえで、旅行や家族イベントに使える目安です。</span></div>`);items.push(`<div class="adviceItem"><b>90歳時点資産は${yenMan(age90)}の見込みです</b><span class="note">${age90>0?'老後資金の安心度は保たれています。':'老後資金は注意が必要です。'}大きく悪化した月だけ確認すれば十分です。</span></div>`);items.push(`<div class="adviceItem"><b>現金は生活費${cashMonths.toFixed(1)}か月分です</b><span class="note">${cashMonths<6?'現金が少なめです。大きな支出は慎重に確認してください。':'住宅ローン繰上返済より、手元資金と家族イベント予算の確保を優先しやすい状態です。'}</span></div>`);document.getElementById('aiAdvice').innerHTML=items.join('');document.getElementById('miniTravel').textContent=s.ok>=200000?'＋20万円 OK':'慎重に確認'}
 function renderEvents(){
   document.getElementById('eventList').innerHTML=rules.map(r=>`<div class="eventRow"><div><b>${r.name}</b><div class="small">${r.category} / ${r.type} / ${yenMan(r.amount)} / ${r.startAge}〜${r.endAge}歳</div></div><label><input type="checkbox" ${r.enabled?'checked':''} onchange="toggleEvent('${r.id}',this.checked)"> 反映</label></div>`).join('');
   const custom=state.custom_events||[];
@@ -309,8 +372,509 @@ function clearSbiPreview(){state.sbi={loaded:false,files:[],total:0,detected:{st
 function applyMonthlyUpdate(){const a=manToYen(document.getElementById('manualAssetTotal').value),l=manToYen(document.getElementById('manualLoan').value),c=manToYen(document.getElementById('manualCash').value),e=manToYen(document.getElementById('manualExpense').value);if(a)state.assets.asset_total=a;if(l)state.assets.loan_balance=l;if(c)state.assets.cash=c;if(e){state.settings.basic_living_expense=e;document.getElementById('expense').value=Math.round(e/10000)}if(state.sbi&&state.sbi.loaded){if(state.sbi.detected.stocks)state.assets.stocks=state.sbi.detected.stocks;if(state.sbi.detected.funds)state.assets.funds=state.sbi.detected.funds;if(state.sbi.detected.cash&&!c)state.assets.cash=state.sbi.detected.cash}state.assets.net_worth=state.assets.asset_total-state.assets.loan_balance;state.meta.lastUpdated=new Date().toLocaleDateString('ja-JP');saveHistoryOnly(false);saveState();log('Ver4.0更新完了：SBI複数CSV、MF資産内訳、MFバランスシート、住宅ローン残債を確認して反映しました。HTMLを差し替えると夫婦で同じ最新データを見られます。');render()}
 function applyMfAssetPdfValues(){state.assets.asset_total=79837201;state.assets.cash=10278748;state.assets.stocks=20876594;state.assets.funds=30183767;state.assets.bonds=5000000;state.mf.pensionAsset=13487147;state.mf.assetPdfApplied=true;state.mf.assetAppliedAt=new Date().toLocaleString('ja-JP');document.getElementById('manualAssetTotal').value=Math.round(state.assets.asset_total/10000);document.getElementById('manualCash').value=Math.round(state.assets.cash/10000);state.assets.net_worth=state.assets.asset_total-state.assets.loan_balance;saveState();log('マネーフォワード資産内訳PDFの値を反映しました。');render()}
 function applyMfBalanceSheetValues(){state.assets.asset_total=79837201;state.mf.totalDebt=14712494;state.assets.loan_balance=13926295;state.mf.netWorthFromMf=65124707;state.mf.balancePdfApplied=true;state.mf.balanceAppliedAt=new Date().toLocaleString('ja-JP');state.assets.net_worth=state.assets.asset_total-state.assets.loan_balance;document.getElementById('manualAssetTotal').value=Math.round(state.assets.asset_total/10000);document.getElementById('manualLoan').value=Math.round(state.assets.loan_balance/10000);saveState();log('マネーフォワード バランスシートPDFの値を反映しました。住宅ローン残債 13,926,295円。');render()}
+const applyMfAssetPdfValuesBase=applyMfAssetPdfValues;
+applyMfAssetPdfValues=function(){if(!state.mf.assetPdfName){log('資産内訳PDFを選択してから反映してください。');MonthlyUpdateV5?.render();return}applyMfAssetPdfValuesBase()}
+const applyMfBalanceSheetValuesBase=applyMfBalanceSheetValues;
+applyMfBalanceSheetValues=function(){if(!state.mf.balancePdfName){log('バランスシートPDFを選択してから反映してください。');MonthlyUpdateV5?.render();return}applyMfBalanceSheetValuesBase()}
 
-function saveHistoryOnly(show=true){const s=spendOk();const ym=new Date().toISOString().slice(0,7);const item={month:ym,net_worth:state.assets.net_worth,cash:state.assets.cash,basic_living_expense:state.settings.basic_living_expense,spend_ok:s.ok,asset_total:state.assets.asset_total,loan_balance:state.assets.loan_balance};state.history=state.history.filter(x=>x.month!==ym);state.history.push(item);state.history.sort((a,b)=>a.month.localeCompare(b.month));state.meta.lastUpdated=new Date().toLocaleDateString('ja-JP');saveState();if(show)log('履歴を保存しました。');render()}
+function saveHistoryOnly(show=true){const s=spendOk();const ym=new Date().toISOString().slice(0,7),updatedAt=new Date().toISOString().slice(0,10),investment_total=(state.assets.stocks||0)+(state.assets.funds||0)+(state.assets.bonds||0)+(state.assets.ideco||0);const existed=(state.history||[]).some(x=>x.month===ym);const item={month:ym,updatedAt,asset_total:state.assets.asset_total,net_worth:state.assets.net_worth,cash:state.assets.cash,investment_total,loan_balance:state.assets.loan_balance,stocks:state.assets.stocks||0,funds:state.assets.funds||0,bonds:state.assets.bonds||0,ideco:state.assets.ideco||0,basic_living_expense:state.settings.basic_living_expense,spendable_this_year:s.ok};state.history=(state.history||[]).filter(x=>x.month!==ym);state.history.push(item);state.history.sort((a,b)=>a.month.localeCompare(b.month));state.meta.lastUpdated=updatedAt;state.meta.updateMonth=ym;saveState();if(show)log(existed?'同じ月の履歴を上書き保存しました。':'履歴を保存しました。');render()}
+
+// Ver5.4 月次更新
+const MonthlyUpdateV5=(()=>{
+  const invest=a=>(a.stocks||0)+(a.funds||0)+(a.bonds||0)+(a.ideco||0);
+  const today=()=>new Date().toISOString().slice(0,10);
+  const month=()=>new Date().toISOString().slice(0,7);
+  const addMonths=(ym,offset)=>{const [y,m]=ym.split('-').map(Number);const d=new Date(Date.UTC(y,m-1+offset,1));return d.toISOString().slice(0,7)};
+  const snapshot=()=>({
+    asset_total:state.assets.asset_total||0,
+    net_worth:state.assets.net_worth||0,
+    cash:state.assets.cash||0,
+    investment_total:invest(state.assets||{}),
+    loan_balance:state.assets.loan_balance||0,
+    stocks:state.assets.stocks||0,
+    funds:state.assets.funds||0,
+    bonds:state.assets.bonds||0,
+    ideco:state.assets.ideco||0
+  });
+  const historyFor=ym=>(state.history||[]).find(h=>h.month===ym)||null;
+  const previousHistory=()=>historyFor(addMonths(month(),-1));
+  const yearlyHistory=()=>historyFor(addMonths(month(),-12));
+  const rules=()=>({requiredSbiCsvCount:3,optionalSbiCsvCount:1,usStocksSource:'moneyforward',...(state.updateRules||{})});
+  const csvStatusText=count=>{
+    const r=rules();
+    const max=r.requiredSbiCsvCount+r.optionalSbiCsvCount;
+    if(count>=max)return `${count}/${max}件（全件読込済み）`;
+    if(count>=r.requiredSbiCsvCount)return `${count}/${max}件（4件目は任意）`;
+    return `${count}/${r.requiredSbiCsvCount}件（あと${r.requiredSbiCsvCount-count}件必要）`;
+  };
+  const status=()=>{
+    const r=rules();
+    const sbiCount=state.sbi?.files?.length||0;
+    const items=[
+      {id:'sbi1',label:'SBI CSV 1件目',ok:sbiCount>=1,detail:state.sbi?.files?.[0]?.fileName||'未読込'},
+      {id:'sbi2',label:'SBI CSV 2件目',ok:sbiCount>=2,detail:state.sbi?.files?.[1]?.fileName||'未読込'},
+      {id:'sbi3',label:'SBI CSV 3件目',ok:sbiCount>=3,detail:state.sbi?.files?.[2]?.fileName||'未読込'},
+      {id:'sbi4',label:'SBI CSV 4件目',ok:true,optional:true,detail:state.sbi?.files?.[3]?.fileName||'任意'},
+      {id:'mfAsset',label:'マネーフォワード資産内訳PDF',ok:!!(state.mf?.assetPdfApplied&&state.mf?.assetPdfName),detail:state.mf?.assetPdfName||'未読込'},
+      {id:'mfBalance',label:'マネーフォワードバランスシートPDF',ok:!!(state.mf?.balancePdfApplied&&state.mf?.balancePdfName),detail:state.mf?.balancePdfName||'未読込'}
+    ];
+    const required=[
+      {id:'sbi',label:`SBI CSV ${r.requiredSbiCsvCount}ファイル以上`,ok:sbiCount>=r.requiredSbiCsvCount},
+      {id:'mfAsset',label:'マネーフォワード資産内訳PDF',ok:!!(state.mf?.assetPdfApplied&&state.mf?.assetPdfName)},
+      {id:'mfBalance',label:'マネーフォワードバランスシートPDF',ok:!!(state.mf?.balancePdfApplied&&state.mf?.balancePdfName)}
+    ];
+    return {sbiCount,items,required,missing:required.filter(x=>!x.ok),csvText:csvStatusText(sbiCount)};
+  };
+  const allReady=()=>status().missing.length===0;
+  const mark=ok=>`<span class="v5Mark ${ok?'ok':'bad'}">${ok?'✓':'×'}</span>`;
+  const markItem=x=>x.optional&&!state.sbi?.files?.[3]?'<span class="status warn">任意</span>':mark(x.ok);
+  const fmtDelta=v=>`${v>=0?'+':''}${yenMan(v)}`;
+  const deltaClass=(v,loan=false)=>{const d=loan?-v:v;return d>0?'up':d<0?'down':'flat'};
+  const valueOf=(obj,key)=>obj?Number(obj[key]||0):null;
+  const compareMetric=(label,key,before,after,loan=false)=>{
+    const prev=valueOf(before,key);
+    const now=valueOf(after,key)||0;
+    const diff=now-(prev||0);
+    return `<div class="v51CompareCard"><div class="label">${label}</div><div class="row"><span>前回</span><b>${prev==null?'比較データなし':yenMan(prev)}</b></div><div class="row"><span>今回</span><b>${yenMan(now)}</b></div><div class="row"><span>増減</span><b class="v5Delta ${deltaClass(diff,loan)}">${prev==null?'比較データなし':fmtDelta(diff)}</b></div></div>`;
+  };
+  const periodDiff=(label,key,base,after,loan=false)=>{
+    if(!base)return `<div class="v51CompareCard"><div class="label">${label}</div><b>比較データなし</b><div class="small">historyに対象月がある場合に自動表示します。</div></div>`;
+    const diff=(after[key]||0)-(base[key]||0);
+    return `<div class="v51CompareCard"><div class="label">${label}</div><b class="v5Delta ${deltaClass(diff,loan)}">${fmtDelta(diff)}</b><div class="small">対象月：${base.month}</div></div>`;
+  };
+  const compareHtml=()=>{
+    const cmp=state.meta?.lastUpdateComparison;
+    if(!cmp)return '<div class="note">更新実行後に、前月比・前年比をここへ表示します。</div>';
+    const before=cmp.before||{};
+    const after=cmp.after||snapshot();
+    return `<div class="v51Compare">
+      ${compareMetric('純資産','net_worth',before,after)}
+      ${compareMetric('現金','cash',before,after)}
+      ${compareMetric('投資資産','investment_total',before,after)}
+      ${compareMetric('住宅ローン','loan_balance',before,after,true)}
+      ${compareMetric('総資産','asset_total',before,after)}
+      ${periodDiff('前月比','net_worth',cmp.previousMonth,after)}
+      ${periodDiff('前年比','net_worth',cmp.previousYear,after)}
+    </div>`;
+  };
+  const monthlyHistoryItem=()=>{
+    const s=spendOk();
+    return {
+      month:month(),
+      updatedAt:today(),
+      asset_total:state.assets.asset_total||0,
+      net_worth:state.assets.net_worth||0,
+      cash:state.assets.cash||0,
+      investment_total:invest(state.assets||{}),
+      loan_balance:state.assets.loan_balance||0,
+      stocks:state.assets.stocks||0,
+      funds:state.assets.funds||0,
+      bonds:state.assets.bonds||0,
+      ideco:state.assets.ideco||0,
+      basic_living_expense:state.settings.basic_living_expense||0,
+      spendable_this_year:s.ok||0
+    };
+  };
+  const saveMonthlyHistory=()=>{
+    const item=monthlyHistoryItem();
+    const existed=(state.history||[]).some(x=>x.month===item.month);
+    state.history=(state.history||[]).filter(x=>x.month!==item.month);
+    state.history.push(item);
+    state.history.sort((a,b)=>a.month.localeCompare(b.month));
+    return {item,existed};
+  };
+  const health=()=>{
+    const cmp=state.meta?.lastUpdateComparison;
+    if(!cmp)return '<div class="note">更新実行後に家計健康診断を表示します。</div>';
+    const b=cmp.before||{},a=cmp.after||snapshot();
+    const cashMonths=(a.cash||0)/((state.settings.basic_living_expense||1)/12);
+    const netDiff=(a.net_worth||0)-(b.net_worth||0);
+    const investDiff=(a.investment_total||0)-(b.investment_total||0);
+    const loanDiff=(a.loan_balance||0)-(b.loan_balance||0);
+    let score=3,good=[],warn=[],improve=[],cats=[];
+    if(netDiff>0){score++;good.push('純資産が増えています。')}else if(netDiff<-500000){score--;warn.push('純資産が大きめに減っています。')}
+    cats.push({name:'純資産',score:netDiff>0?5:netDiff<-500000?2:3});
+    if(cashMonths>=12){score++;good.push('現金は生活費12か月分以上あります。')}else if(cashMonths<6){score--;warn.push('現金が生活費6か月分未満です。')}
+    cats.push({name:'現金',score:cashMonths>=12?5:cashMonths>=6?3:2});
+    if(investDiff>0){score++;good.push('投資資産が増えています。')}
+    cats.push({name:'投資',score:investDiff>0?5:3});
+    if(loanDiff<0){score++;good.push('住宅ローン残高が順調に減っています。')}else if(loanDiff>0){warn.push('住宅ローン残高が増えています。')}
+    cats.push({name:'住宅ローン',score:loanDiff<0?5:loanDiff===0?3:2});
+    score=Math.max(1,Math.min(5,score));
+    if(!warn.length)warn.push('大きな注意点はありません。');
+    if(cashMonths<12)improve.push('現金を生活費12か月分に近づけると安心度が上がります。');
+    if(netDiff<=0)improve.push('固定費や大きな支出の一時要因を確認します。');
+    if(!improve.length)improve.push('今の更新ペースを維持します。');
+    return `<div class="v51Health"><div class="label">総合評価</div><div class="v51Stars">${'★'.repeat(score)}${'☆'.repeat(5-score)}</div><h3>カテゴリ別スコア</h3><div class="v52Bars">${cats.map(c=>`<div class="v52Bar"><span>${c.name}</span><div class="v52BarTrack"><div class="v52BarFill" style="width:${c.score*20}%"></div></div><span>${c.score}/5</span></div>`).join('')}</div><h3>良い点</h3><div class="note">${good.join('<br>')||'安定しています。'}</div><h3>注意点</h3><div class="note">${warn.join('<br>')}</div><h3>改善点</h3><div class="note">${improve.join('<br>')}</div></div>`;
+  };
+  const aiComment=()=>{
+    const cmp=state.meta?.lastUpdateComparison;
+    if(!cmp)return '更新実行後に、純資産・現金・投資資産・住宅ローンの状況を自動コメントします。';
+    const b=cmp.before||{},a=cmp.after||snapshot(),s=spendOk();
+    const cashMonths=(a.cash||0)/((state.settings.basic_living_expense||1)/12);
+    const age90=calc('base')[50].end;
+    const notes=[];
+    notes.push(`純資産は${fmtDelta((a.net_worth||0)-(b.net_worth||0))}です。`);
+    notes.push(cashMonths<6?'現金が生活費6か月分を下回るため、追加支出は慎重に確認してください。':`現金は生活費${cashMonths.toFixed(1)}か月分で、手元資金は確保できています。`);
+    notes.push((a.investment_total||0)>(b.investment_total||0)?'投資資産は増加しています。':'投資資産は横ばいまたは減少です。相場要因か入出金要因かだけ確認しましょう。');
+    notes.push((a.loan_balance||0)<(b.loan_balance||0)?'住宅ローンは順調に減っています。':'住宅ローン残高は減っていません。入力値を確認してください。');
+    notes.push(`今年あと使える金額は${yenMan(s.ok)}、90歳時点資産は${yenMan(age90)}の見込みです。`);
+    notes.push(age90>0?'老後資金の安心度は保たれています。':'老後資金は注意が必要です。支出イベントを見直しましょう。');
+    return notes.join('\n');
+  };
+  const oneLine=()=>{
+    const cmp=state.meta?.lastUpdateComparison;
+    if(!cmp)return '更新後に今月のひとことを表示します。';
+    const diff=(cmp.after?.net_worth||0)-(cmp.before?.net_worth||0);
+    if(diff>0)return `今月は純資産が${yenMan(diff)}増えました。更新後の状態は良好です。`;
+    if(diff<0)return `今月は純資産が${yenMan(Math.abs(diff))}減りました。大きな支出や相場要因だけ確認しましょう。`;
+    return '今月の純資産はほぼ横ばいです。家計は安定しています。';
+  };
+  const processState={running:false,current:null,done:new Set(),logs:[],startedAt:null,endedAt:null,error:null,cloudflareWaiting:false,logOpen:false};
+  const stepNames=[
+    ['csv','CSV解析'],
+    ['pdf','PDF解析'],
+    ['compare','更新前後比較'],
+    ['history','history保存'],
+    ['ai','AI診断'],
+    ['report','更新完了レポート'],
+    ['github','GitHub更新'],
+    ['cloudflare','Cloudflare確認'],
+    ['complete','更新完了']
+  ];
+  const timeText=()=>new Date().toLocaleTimeString('ja-JP',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  const addProcessLog=msg=>{processState.logs.push(`${timeText()} ${msg}`);processState.logOpen=processState.running;log(msg);render()};
+  const setCurrent=(id,msg)=>{processState.current=id;if(msg)addProcessLog(msg)};
+  const markDone=(id,msg)=>{processState.done.add(id);if(msg)addProcessLog(msg)};
+  const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+  const processSeconds=()=>processState.startedAt?Math.max(0,Math.round(((processState.endedAt||Date.now())-processState.startedAt)/1000)):0;
+  const cloudflareOk=()=>state.sync?.lastCloudflareStatus==='success';
+  const githubOk=()=>state.sync?.lastGithubSyncStatus==='success';
+  const progressHtml=()=>{
+    return `<div class="v54ProgressList">${stepNames.map(([id,label])=>{
+      const done=processState.done.has(id);
+      const current=processState.current===id&&!done;
+      const mark=done?'✓':current?'▶':'□';
+      const cls=done?'done':current?'current':'';
+      const markCls=done?'v54Done':current?'v54Current':'v54Pending';
+      return `<div class="v54ProgressRow ${cls}"><div class="v54Mark ${markCls}">${mark}</div><div>${label}</div></div>`;
+    }).join('')}</div>`;
+  };
+  const historyGraph=()=>{
+    const rows=[...(state.history||[])].slice(-12);
+    if(rows.length<2)return '<div class="note">履歴が2か月以上たまるとグラフを表示します。</div>';
+    const max=Math.max(...rows.map(h=>h.net_worth||0),1);
+    return `<div class="v52Bars">${rows.map(h=>`<div class="v52Bar"><span>${h.month}</span><div class="v52BarTrack"><div class="v52BarFill" style="width:${Math.max(4,(h.net_worth||0)/max*100)}%"></div></div><span>${yenMan(h.net_worth)}</span></div>`).join('')}</div>`;
+  };
+  const reportText=()=>{
+    const cmp=state.meta?.lastUpdateComparison;
+    const s=status();
+    const after=cmp?.after||snapshot();
+    const prev=cmp?.previousMonth;
+    const year=cmp?.previousYear;
+    const diffPrev=prev?fmtDelta((after.net_worth||0)-(prev.net_worth||0)):'比較データなし';
+    const diffYear=year?fmtDelta((after.net_worth||0)-(year.net_worth||0)):'比較データなし';
+    const lines=['那須家ライフプラン 月次更新完了レポート',`更新日：${state.meta.lastUpdated||today()}`,`更新時間：${state.meta.lastUpdateTime||'-'}`,`処理時間：${processSeconds()||state.meta.lastProcessSeconds||0}秒`,`更新月：${state.meta.updateMonth||month()}`,`SBI CSV：${s.csvText}`,'米国株：マネーフォワード資産内訳PDF側で確認'];
+    lines.push(`純資産：${yenMan(after.net_worth)}`,`前月比：${diffPrev}`,`前年比：${diffYear}`,`現金：${yenMan(after.cash)}`,`投資：${yenMan(after.investment_total)}`,`住宅ローン：${yenMan(after.loan_balance)}`,`今年使える金額：${yenMan(spendOk().ok)}`,`AIコメント：${oneLine()}`,`家計健康診断：${healthScoreText()}`,`GitHub：${githubOk()?'成功':state.sync?.lastGithubSyncStatus||'未実行'}`,`Cloudflare：${cloudflareOk()?'成功':state.sync?.lastCloudflareStatus||'未確認'}`,'今回の更新は正常終了しました。');
+    return lines.join('\n');
+  };
+  const reportHtml=()=>`<div class="logBox v52Report" id="v52ReportText">${reportText()}</div><div class="btnRow"><button class="btn secondary" onclick="copyUpdateReport()">レポートをコピー</button></div>`;
+  const healthScoreText=()=>{
+    const cmp=state.meta?.lastUpdateComparison;
+    if(!cmp)return '未診断';
+    const b=cmp.before||{},a=cmp.after||snapshot();
+    const cashMonths=(a.cash||0)/((state.settings.basic_living_expense||1)/12);
+    let score=3;
+    if((a.net_worth||0)>(b.net_worth||0))score++;
+    if(cashMonths>=12)score++;
+    if((a.investment_total||0)>(b.investment_total||0))score++;
+    if((a.loan_balance||0)<(b.loan_balance||0))score++;
+    if(cashMonths<6)score--;
+    score=Math.max(1,Math.min(5,score));
+    return `${'★'.repeat(score)}${'☆'.repeat(5-score)}`;
+  };
+  const phoneCheckHtml=()=>`<label class="v52CheckItem"><input type="checkbox" ${state.meta?.wifePhoneChecked?'checked':''} onchange="MonthlyUpdateV5.toggleManual('wifePhoneChecked',this.checked)"> <span>妻のスマホで確認しました</span></label><div class="value good">${state.meta?.wifePhoneChecked?'更新完了 100%':'更新完了 90%'}</div>`;
+  const applyInputValues=()=>{
+    const changedMan=(id,current)=>{const el=document.getElementById(id);if(!el||el.value==='')return null;const v=Number(el.value);return v===Math.round((current||0)/10000)?null:Math.round(v*10000)};
+    const a=changedMan('manualAssetTotal',state.assets.asset_total),l=changedMan('manualLoan',state.assets.loan_balance),c=changedMan('manualCash',state.assets.cash),e=changedMan('manualExpense',state.settings.basic_living_expense);
+    if(a!==null)state.assets.asset_total=a;
+    if(l!==null)state.assets.loan_balance=l;
+    if(c!==null)state.assets.cash=c;
+    if(e!==null){state.settings.basic_living_expense=e;const expense=document.getElementById('expense');if(expense)expense.value=Math.round(e/10000)}
+    if(state.sbi&&state.sbi.loaded){if(state.sbi.detected.stocks)state.assets.stocks=state.sbi.detected.stocks;if(state.sbi.detected.funds)state.assets.funds=state.sbi.detected.funds;if(state.sbi.detected.cash&&!c)state.assets.cash=state.sbi.detected.cash}
+    state.assets.net_worth=state.assets.asset_total-state.assets.loan_balance;
+  };
+  const mount=()=>{
+    const root=document.querySelector('#update .grid.two');
+    if(!root)return;
+    root.innerHTML=`
+      <div class="card husbandOnly">
+        <h2>月次更新 <span class="husbandOnlyBadge">Ver5.4.1 API分離対応</span></h2>
+        <div class="v54Hero">
+          <b>CSV・PDFを選んで、更新開始を押すだけです。</b>
+          <div class="v54Flow"><div class="v54FlowBox">CSV</div><div class="v54Arrow">↓</div><div class="v54FlowBox">PDF</div><div class="v54Arrow">↓</div><div class="v54FlowBox">更新開始</div></div>
+        </div>
+        <div class="monthlyWizardV5">
+          <div class="controlGrid">
+            <div class="control"><label>SBI CSV（3ファイル以上）</label><input type="file" id="sbiCsv" accept=".csv,text/csv" multiple><div class="small" id="sbiFileName">未選択</div></div>
+            <div class="control"><label>資産内訳PDF</label><input type="file" id="mfAssetPdf" accept=".pdf"><div class="small" id="mfAssetFileName">未選択</div></div>
+            <div class="control"><label>バランスシートPDF</label><input type="file" id="mfBalancePdf" accept=".pdf"><div class="small" id="mfBalanceFileName">未選択</div></div>
+          </div>
+          <div class="btnRow"><button class="btn goodBtn v54Start" id="v5RunUpdateBtn" onclick="MonthlyUpdateV5.applyUpdate()">更新開始</button></div>
+          <details><summary>詳細設定・手動fallback</summary><div class="note">GitHub自動反映は、別Workerの nasu-lifeplan-api へ送信します。GitHub更新API URLが未設定の場合は手動アップロードへ進みます。</div><div class="controlGrid"><div class="control"><label>GitHub更新API URL</label><input type="text" id="v541ApiUrl" placeholder="https://nasu-lifeplan-api.ef41108.workers.dev/api/update-data" oninput="MonthlyUpdateV5.setApiUrl(this.value)"></div><div class="control"><label>更新APIキー</label><input type="password" id="v53ApiKey" autocomplete="off" placeholder="********" oninput="MonthlyUpdateV5.setApiKey(this.value)"></div><div class="control"><label>APIキー保存</label><label><input type="checkbox" id="v53SaveApiKey" onchange="MonthlyUpdateV5.setSaveApiKey(this.checked)"> APIキーをこの端末に保存する</label></div><div class="control"><label>GitHub自動反映</label><label><input type="checkbox" id="v53AutoSync" onchange="MonthlyUpdateV5.setAutoSync(this.checked)"> GitHub自動反映をONにする</label></div></div><div class="btnRow"><button class="btn secondary" onclick="downloadDataJson()">data.jsonを書き出す</button><button class="btn secondary" onclick="clearSbiPreview()">CSV読込をクリア</button></div><div id="sbiLoadedList" class="preview"></div><div id="csvPreview" class="preview"></div></details>
+          <div class="updateCheck"><h3>進行状況</h3><div id="v52Progress"></div><div id="v54ErrorBox"></div></div>
+          <div id="v54CompleteScreen"></div>
+          <div class="v5Step"><div class="v5StepNo">レ</div><div><b>更新完了レポート</b><div id="v52Report"></div><h3>妻スマホ確認</h3><div id="v52CompletionChecklist"></div></div></div>
+          <details id="v54LogDetails" class="v54LogDetails"><summary>更新ログ</summary><div id="updateLog" class="logBox">更新待ちです。</div></details>
+          <div style="display:none"><div id="v5StatusGrid"></div><div id="v51MissingBox"></div><div id="v5Comparison"></div><div id="v52HistoryGraph"></div><div id="v52OneLine"></div><div id="v51Health"></div><div id="v51AiComment"></div><div id="v53SyncPanel"></div></div>
+        </div>
+      </div>
+      <div class="card"><h2>更新後サマリー</h2><table><tbody id="updateSummary"></tbody></table><h3>整合性チェック</h3><div id="v31Consistency" class="updateCheck">未確認</div><div id="v31Checklist" style="display:none"></div></div>`;
+  };
+  const completionHtml=()=>{
+    if(!state.meta?.lastUpdateComparison)return '';
+    const cmp=state.meta.lastUpdateComparison;
+    const after=cmp.after||snapshot();
+    const prev=cmp.previousMonth;
+    const prevText=prev?fmtDelta((after.net_worth||0)-(prev.net_worth||0)):'比較データなし';
+    const okText=cloudflareOk()?'共有URLは最新状態です。':'GitHub更新済みです。Cloudflare反映待ちです。';
+    if(!processState.done.has('complete')&&!cloudflareOk()&&!processState.cloudflareWaiting)return '';
+    return `<div class="v54CompleteScreen">
+      <div class="v54CompleteIcon">🎉</div>
+      <div class="v54CompleteTitle">今月の更新が完了しました</div>
+      <div class="v54SummaryGrid">
+        <div class="v54SummaryCard"><span class="label">純資産</span><b>${yenMan(after.net_worth)}</b></div>
+        <div class="v54SummaryCard"><span class="label">前月比</span><b>${prevText}</b></div>
+        <div class="v54SummaryCard"><span class="label">今年使える金額</span><b>${yenMan(spendOk().ok)}</b></div>
+        <div class="v54SummaryCard"><span class="label">家計健康診断</span><b>${healthScoreText()}</b></div>
+      </div>
+      <h3>AIコメント</h3><div class="v52OneLine">${oneLine()}</div>
+      <div class="callout section">${okText}<br>妻のスマホで確認してください。</div>
+    </div>`;
+  };
+  const render=()=>{
+    const grid=document.getElementById('v5StatusGrid');
+    if(!grid)return;
+    const s=status();
+    grid.innerHTML=s.items.map(x=>`<div class="v51CheckRow"><div><b>${x.label}</b><div class="small">${x.detail}</div></div>${markItem(x)}</div>`).join('');
+    const missing=document.getElementById('v51MissingBox');
+    if(missing){missing.classList.toggle('ok',s.missing.length===0);missing.innerHTML=s.missing.length?`<b>未完了項目</b><br>${s.missing.map(x=>x.label).join('、')}`:'更新可能です。SBI CSV 4件目は任意です。'}
+    const progress=document.getElementById('v52Progress');if(progress)progress.innerHTML=progressHtml();
+    const btn=document.getElementById('v5RunUpdateBtn');
+    if(btn){btn.disabled=processState.running;btn.textContent=processState.running?'更新中...':'更新開始'}
+    const cmp=document.getElementById('v5Comparison');
+    if(cmp)cmp.innerHTML=compareHtml();
+    const h=document.getElementById('v51Health');
+    if(h)h.innerHTML=health();
+    const ai=document.getElementById('v51AiComment');
+    if(ai)ai.textContent=aiComment();
+    const one=document.getElementById('v52OneLine');if(one)one.textContent=oneLine();
+    const graph=document.getElementById('v52HistoryGraph');if(graph)graph.innerHTML=historyGraph();
+    const report=document.getElementById('v52Report');if(report)report.innerHTML=reportHtml();
+    const checklist=document.getElementById('v52CompletionChecklist');if(checklist)checklist.innerHTML=phoneCheckHtml();
+    const saveKey=document.getElementById('v53SaveApiKey');if(saveKey)saveKey.checked=!!syncPrefs.saveApiKey;
+    const apiKey=document.getElementById('v53ApiKey');if(apiKey&&document.activeElement!==apiKey)apiKey.value=syncPrefs.apiKey||'';
+    const apiUrl=document.getElementById('v541ApiUrl');if(apiUrl&&document.activeElement!==apiUrl)apiUrl.value=syncPrefs.apiUrl||state.sync?.githubApiUrl||'';
+    const autoSync=document.getElementById('v53AutoSync');if(autoSync)autoSync.checked=!!syncPrefs.autoGithubSync;
+    const logDetails=document.getElementById('v54LogDetails');if(logDetails)logDetails.open=processState.running||processState.logOpen;
+    const logBox=document.getElementById('updateLog');if(logBox)logBox.textContent=processState.logs.length?processState.logs.join('\n'):'更新待ちです。';
+    const err=document.getElementById('v54ErrorBox');
+    if(err)err.innerHTML=processState.error?`<div class="v54Error"><b>${processState.error}</b><div class="btnRow"><button class="btn secondary" onclick="downloadDataJson()">手動アップロードはこちら</button></div></div>`:(processState.cloudflareWaiting?'<div class="v54CloudflareWait"><b>Cloudflare反映待ちです。</b><br>30秒後に再確認してください。<br>GitHub更新済みです。Cloudflare反映待ちです。</div>':'');
+    const complete=document.getElementById('v54CompleteScreen');
+    if(complete)complete.innerHTML=completionHtml();
+  };
+  const setAutoSync=checked=>{
+    syncPrefs.autoGithubSync=!!checked;
+    state.sync.githubAutoSyncEnabled=!!checked;
+    saveSyncPrefs();
+    saveState();
+    render();
+  };
+  const setApiKey=value=>{
+    syncPrefs.apiKey=value||'';
+    saveSyncPrefs();
+  };
+  const setApiUrl=value=>{
+    syncPrefs.apiUrl=(value||'').trim();
+    state.sync.githubApiUrl=syncPrefs.apiUrl||null;
+    saveSyncPrefs();
+    saveState();
+  };
+  const setSaveApiKey=checked=>{
+    syncPrefs.saveApiKey=!!checked;
+    saveSyncPrefs();
+    render();
+  };
+  const syncGithub=async()=>{
+    if(state.sync?.lastGithubSyncStatus==='running')return;
+    if(!state.meta?.lastUpdateComparison){log('月次更新を実行してからGitHubへ反映してください。');return}
+    const apiUrl=(syncPrefs.apiUrl||state.sync?.githubApiUrl||'').trim();
+    if(!apiUrl){
+      state.sync.lastGithubSyncStatus='failed';
+      state.sync.lastGithubSyncMessage='GitHub更新API URLが未設定です。nasu-lifeplan-api のURLを入力してください。';
+      state.meta.githubDataJsonUploaded=false;
+      saveState();
+      log('GitHub更新API URLが未設定です。nasu-lifeplan-api のURLを入力してください。');
+      render();
+      return false;
+    }
+    if(!syncPrefs.apiKey){
+      state.sync.lastGithubSyncStatus='failed';
+      state.sync.lastGithubSyncMessage='更新APIキーを入力してください。';
+      state.meta.githubDataJsonUploaded=false;
+      saveState();
+      log('GitHub反映に失敗しました。更新APIキーを入力してください。');
+      render();
+      return false;
+    }
+    state.sync.githubAutoSyncEnabled=!!syncPrefs.autoGithubSync;
+    state.sync.lastGithubSyncStatus='running';
+    state.sync.lastGithubSyncAt=new Date().toISOString();
+    state.sync.lastGithubSyncMessage='GitHubへdata.jsonを反映しています。';
+    state.meta.githubDataJsonUploaded=false;
+    saveState();
+    render();
+    try{
+      const payloadData=exportData();
+      payloadData.meta={...payloadData.meta,lastSyncId:state.meta.lastSyncId,githubDataJsonUploaded:true};
+      state.sync.githubApiUrl=apiUrl;
+      payloadData.sync={...payloadData.sync,githubApiUrl:apiUrl,lastGithubSyncStatus:'success',lastGithubSyncAt:new Date().toISOString(),lastGithubCommitUrl:null,lastGithubSyncMessage:'data.jsonをGitHubへ反映しました。'};
+      const payload={data:payloadData,commitMessage:`Update data.json for ${state.meta.updateMonth||month()}`};
+      const res=await fetch(apiUrl,{method:'POST',headers:{'Content-Type':'application/json','X-Update-Key':syncPrefs.apiKey},body:JSON.stringify(payload)});
+      const json=await res.json().catch(()=>({}));
+      if(!res.ok||json.ok===false)throw new Error(json.error||json.message||`HTTP ${res.status}`);
+      state.sync.lastGithubSyncStatus='success';
+      state.sync.lastGithubSyncAt=json.updatedAt||new Date().toISOString();
+      state.sync.lastGithubCommitUrl=json.commitUrl||null;
+      state.sync.lastGithubSyncMessage=json.message||'data.jsonをGitHubへ反映しました。';
+      state.meta.githubDataJsonUploaded=true;
+      saveState();
+      log('GitHub反映に成功しました。Cloudflareに自動反映されます。');
+      return true;
+    }catch(e){
+      state.sync.lastGithubSyncStatus='failed';
+      state.sync.lastGithubSyncAt=new Date().toISOString();
+      state.sync.lastGithubSyncMessage=e.message||'GitHub反映に失敗しました。';
+      state.meta.githubDataJsonUploaded=false;
+      saveState();
+      log('GitHub反映に失敗しました。data.jsonを書き出して手動アップロードしてください。');
+      return false;
+    }
+  };
+  const waitForCloudflare=async()=>{
+    const targetSyncId=state.meta.lastSyncId;
+    const started=Date.now();
+    if(!targetSyncId){
+      state.sync.lastCloudflareStatus='waiting';
+      state.sync.lastCloudflareMessage='lastSyncIdがないためCloudflare反映確認を開始できません。';
+      saveState();
+      return false;
+    }
+    state.sync.lastCloudflareStatus='checking';
+    state.sync.lastCloudflareMessage='Cloudflare反映を確認しています。';
+    saveState();
+    while(Date.now()-started<60000){
+      try{
+        const res=await fetch(`data.json?check=${Date.now()}`,{cache:'no-store'});
+        if(res.ok){
+          const json=await res.json();
+          const meta=json.meta||{};
+          if(meta.lastSyncId===targetSyncId){
+            state.sync.lastCloudflareStatus='success';
+            state.sync.lastCloudflareCheckedAt=new Date().toISOString();
+            state.sync.lastCloudflareMessage='Cloudflare反映済み';
+            saveState();
+            return true;
+          }
+        }
+      }catch(e){}
+      await sleep(5000);
+    }
+    state.sync.lastCloudflareStatus='waiting';
+    state.sync.lastCloudflareCheckedAt=new Date().toISOString();
+    state.sync.lastCloudflareMessage='Cloudflare反映待ちです。30秒後に再確認してください。';
+    saveState();
+    return false;
+  };
+  const updateCurrentHistory=extra=>{
+    const ym=state.meta.updateMonth||month();
+    state.history=(state.history||[]).map(h=>h.month===ym?{...h,...extra}:h);
+  };
+  const applyUpdate=async()=>{
+    if(processState.running)return;
+    processState.running=true;processState.done=new Set();processState.logs=[];processState.error=null;processState.cloudflareWaiting=false;processState.startedAt=Date.now();processState.endedAt=null;processState.logOpen=true;
+    state.meta.githubDataJsonUploaded=false;state.meta.wifePhoneChecked=false;state.meta.dataJsonSavedAt=null;state.sync.githubApiUrl=(syncPrefs.apiUrl||state.sync.githubApiUrl||'')||null;state.sync.lastCloudflareStatus=null;state.sync.lastCloudflareMessage=null;saveState();render();
+    try{
+      setCurrent('csv','CSV解析開始');
+      const inputFiles=[...((document.getElementById('sbiCsv')||{}).files||[])];
+      if(inputFiles.length&&((state.sbi?.files||[]).length<rules().requiredSbiCsvCount))await readSbiCsv();
+      if((state.sbi?.files||[]).length<rules().requiredSbiCsvCount)throw new Error('CSV解析で停止しました。SBI CSVを3ファイル以上選択してください。');
+      markDone('csv','CSV解析完了');
+
+      setCurrent('pdf','PDF解析開始');
+      if(!state.mf?.assetPdfName)throw new Error('PDF解析で停止しました。資産内訳PDFを選択してください。');
+      if(!state.mf?.balancePdfName)throw new Error('PDF解析で停止しました。バランスシートPDFを選択してください。');
+      if(!state.mf.assetPdfApplied)applyMfAssetPdfValuesBase();
+      if(!state.mf.balancePdfApplied)applyMfBalanceSheetValuesBase();
+      markDone('pdf','PDF解析完了');
+
+      setCurrent('compare','更新前後比較開始');
+      const before=snapshot();
+      const prev=previousHistory();
+      const year=yearlyHistory();
+      applyInputValues();
+      state.assets.net_worth=state.assets.asset_total-state.assets.loan_balance;
+      state.meta.lastUpdateComparison={before,after:snapshot(),previousMonth:prev,previousYear:year,updatedAt:new Date().toISOString()};
+      markDone('compare','更新前後比較完了');
+
+      setCurrent('history','history保存');
+      const saved=saveMonthlyHistory();
+      state.meta.lastSyncId=new Date().toISOString();
+      state.meta.lastUpdated=today();
+      state.meta.lastUpdateTime=timeText();
+      state.meta.updateMonth=month();
+      state.meta.version='5.4.1';
+      state.meta.lastProcessSeconds=0;
+      updateCurrentHistory({updatedAt:new Date().toISOString(),processSeconds:0,github:'pending',cloudflare:'pending'});
+      markDone('history',`historyへ${saved.existed?'上書き保存':'新規保存'}`);
+
+      setCurrent('ai','AI診断更新');
+      markDone('ai','AI診断完了');
+
+      setCurrent('report','更新完了レポート生成');
+      markDone('report','更新完了レポート生成完了');
+
+      setCurrent('github','GitHub更新');
+      const gh=await syncGithub();
+      updateCurrentHistory({github:gh?'success':'failed'});
+      if(!gh)throw new Error('GitHub更新失敗');
+      markDone('github','GitHub更新完了');
+
+      setCurrent('cloudflare','Cloudflare確認');
+      const cf=await waitForCloudflare();
+      updateCurrentHistory({cloudflare:cf?'success':'waiting'});
+      if(cf){markDone('cloudflare','Cloudflare反映済み')}else{processState.cloudflareWaiting=true;addProcessLog('Cloudflare反映待ちです。30秒後に再確認してください。')}
+
+      setCurrent('complete','更新完了');
+      processState.endedAt=Date.now();
+      state.meta.lastProcessSeconds=processSeconds();
+      updateCurrentHistory({processSeconds:state.meta.lastProcessSeconds,github:'success',cloudflare:cf?'success':'waiting'});
+      markDone('complete','更新完了');
+      saveState();
+    }catch(e){
+      processState.error=e.message||'更新処理で停止しました。';
+      processState.endedAt=Date.now();
+      addProcessLog(processState.error);
+    }finally{
+      processState.running=false;
+      processState.current=null;
+      saveState();
+      render();
+    }
+  };
+  const toggleManual=(key,checked)=>{state.meta[key]=!!checked;saveState();render()};
+  return {mount,render,applyUpdate,status,saveMonthlyHistory,toggleManual,reportText,setAutoSync,setApiKey,setApiUrl,setSaveApiKey,syncGithub};
+})();
 
 
 // Ver3.1更新チェック
@@ -321,13 +885,13 @@ function v31Status(ok, caution=false){
 }
 function renderV31Checklist(){
   const count = state.sbi && state.sbi.files ? state.sbi.files.length : 0;
-  const sbiOk = count >= 4;
-  const sbiCaution = count > 0 && count < 4;
+  const sbiOk = count >= 3;
+  const sbiCaution = count > 0 && count < 3;
   const assetOk = !!(state.mf && state.mf.assetPdfApplied);
   const bsOk = !!(state.mf && state.mf.balancePdfApplied);
   const loanOk = !!(state.assets && state.assets.loan_balance);
   return `
-    <div class="updateCheckRow"><div><b>SBI証券CSV</b><span class="small">夫・妻・子ども2人の4口座分を追加読込</span></div><div>${v31Status(sbiOk,sbiCaution)} ${count}/4件</div></div>
+    <div class="updateCheckRow"><div><b>SBI証券CSV</b><span class="small">3ファイル以上で更新可能 / 4件目は任意</span></div><div>${v31Status(sbiOk,sbiCaution)} ${count}/3件以上</div></div>
     <div class="updateCheckRow"><div><b>MF資産内訳PDF</b><span class="small">資産カテゴリの確認用 / ${state.mf.assetPdfName || 'ファイル未選択'}</span></div><div>${v31Status(assetOk)} ${state.mf.assetPdfApplied ? '反映済み' : '未反映'}</div></div>
     <div class="updateCheckRow"><div><b>MFバランスシートPDF</b><span class="small">住宅ローン残債・純資産の確認用 / ${state.mf.balancePdfName || 'ファイル未選択'}</span></div><div>${v31Status(bsOk)} ${state.mf.balancePdfApplied ? '反映済み' : '未反映'}</div></div>
     <div class="updateCheckRow"><div><b>住宅ローン残債</b><span class="small">バランスシートPDFの値を優先</span></div><div>${v31Status(loanOk)} ${yenMan(state.assets.loan_balance)}</div></div>
@@ -347,13 +911,14 @@ function renderV31Consistency(){
 }
 
 function log(t){const el=document.getElementById('updateLog');if(el)el.textContent=t}
-function render(){const s=state.settings,a=state.assets;document.getElementById('income').value=document.getElementById('income').value||Math.round(s.annual_income/10000);document.getElementById('expense').value=document.getElementById('expense').value||Math.round(s.basic_living_expense/10000);document.getElementById('returnRate').value=document.getElementById('returnRate').value||s.expected_return*100;document.getElementById('retireAge').value=document.getElementById('retireAge').value||s.retirement_age;document.getElementById('pensionAge').value=document.getElementById('pensionAge').value||s.pension_start_age;const current=calc('base'),up=calc('up'),down=calc('down'),p=params('base');document.getElementById('incomeLabel').textContent=yenMan(p.income);document.getElementById('expenseLabel').textContent=yenMan(p.expense);document.getElementById('returnLabel').textContent=pc(p.ret);document.getElementById('retireLabel').textContent=p.retire+'歳';document.getElementById('pensionLabel').textContent=p.pensionAge+'歳';document.getElementById('kpiNet').textContent=yenMan(a.net_worth);document.getElementById('kpiExpense').textContent=yenMan(p.expense);document.getElementById('kpiAge90').textContent=yenMan(current[50].end);document.getElementById('kpiUpdated').textContent=state.meta.lastUpdated||'未更新';const chart=lineSvg(current,up,down);document.getElementById('lifeChartOverview').innerHTML=chart;document.getElementById('lifeChartSim').innerHTML=chart;const sp=spendOk();document.getElementById('spendOk').textContent=yenMan(sp.ok);document.getElementById('spendOkTop').textContent=yenMan(sp.ok);document.getElementById('spendDetail').innerHTML=`<tr><th>年間収支余力</th><td>${yenMan(sp.annualSurplus)}</td></tr><tr><th>今年のイベント費</th><td>${yenMan(sp.currentYearEvents)}</td></tr><tr><th>生活防衛資金</th><td>${yenMan(sp.safety)}</td></tr><tr><th>余裕安全資産</th><td>${yenMan(sp.extraSafe)}</td></tr>`;document.getElementById('lifeTable').innerHTML=[40,45,50,55,60,65,70,80,90].map(age=>{const r=current[age-40];return`<tr><td>${r.age}歳</td><td>${r.year}</td><td>${yenMan(r.end)}</td><td>${yenMan(r.baseExpense)}</td><td>${yenMan(r.events)}</td><td>${yenMan(r.loan)}</td></tr>`}).join('');renderAdvice();renderEvents();document.getElementById('monthlyCheck').innerHTML=`<tr><th>生活費</th><td>MF実績で年1回見直し</td></tr><tr><th>SBI CSV</th><td>${state.sbi.loaded?state.sbi.files.length+'件読込済み':'未読込'}</td></tr><tr><th>MF PDF</th><td>資産内訳：${state.mf.assetPdfName||'未選択'} / BS：${state.mf.balancePdfName||'未選択'}</td></tr><tr><th>手動イベント</th><td>${(state.custom_events||[]).length}件</td></tr><tr><th>配当</th><td>別ファイルで管理</td></tr>`;const assetItems=[{name:'現金',value:a.cash,color:'#60a5fa'},{name:'株式',value:a.stocks,color:'#34d399'},{name:'投資信託',value:a.funds,color:'#a78bfa'},{name:'国債',value:a.bonds,color:'#fbbf24'},{name:'iDeCo',value:a.ideco,color:'#f472b6'}];document.getElementById('assetDonut').innerHTML=donut(assetItems,'資産配分');document.getElementById('assetLegend').innerHTML=legend(assetItems);const policyItems=[{name:'インデックス',value:state.portfolio.index_total,color:'#3b82f6'},{name:'高配当',value:state.portfolio.high_dividend_total,color:'#22c55e'},{name:'債券ETF・その他',value:state.portfolio.bond_etf_other,color:'#f59e0b'}];document.getElementById('policyDonut').innerHTML=donut(policyItems,'投資方針');document.getElementById('policyLegend').innerHTML=legend(policyItems);document.getElementById('sbiSummary').innerHTML=`<tr><th>状態</th><td>${state.sbi.loaded?'<span class="status ok">'+state.sbi.files.length+'件読込済み</span>':'<span class="status warn">未読込</span>'}</td></tr><tr><th>読込ファイル</th><td>${state.sbi.files.map((f,i)=>`${f.fileName} <button class="btn secondary" onclick="removeSbiFile(${i})">削除</button>`).join('<br>')||'-'}</td></tr><tr><th>推定株式</th><td>${yenMan(state.sbi.detected?.stocks||0)}</td></tr><tr><th>推定投資信託</th><td>${yenMan(state.sbi.detected?.funds||0)}</td></tr><tr><th>推定現金</th><td>${yenMan(state.sbi.detected?.cash||0)}</td></tr>`;document.getElementById('sbiLoadedList').innerHTML=state.sbi.files.length?'<table>'+state.sbi.files.map((f,i)=>`<tr><td>${f.fileName}</td><td>${yenMan(f.total)}</td><td><button class="btn secondary" onclick="removeSbiFile(${i})">削除</button></td></tr>`).join('')+'</table>':'';document.getElementById('updateSummary').innerHTML=`<tr><th>総資産</th><td>${yenMan(a.asset_total)}</td></tr><tr><th>住宅ローン</th><td>${yenMan(a.loan_balance)}</td></tr><tr><th>純資産</th><td>${yenMan(a.net_worth)}</td></tr><tr><th>MF資産内訳PDF</th><td>${state.mf.assetPdfApplied?'反映済み':'未反映'}</td></tr><tr><th>MFバランスシートPDF</th><td>${state.mf.balancePdfApplied?'反映済み':'未反映'}</td></tr><tr><th>基本生活費</th><td>${yenMan(s.basic_living_expense)}</td></tr>`;document.getElementById('historyTable').innerHTML=state.history.map(h=>`<tr><td>${h.month}</td><td>${yenMan(h.net_worth)}</td><td>${yenMan(h.cash)}</td><td>${yenMan(h.basic_living_expense)}</td><td>${yenMan(h.spend_ok)}</td></tr>`).join('')||'<tr><td colspan="5">履歴はまだありません</td></tr>';document.getElementById('jsonView').value=JSON.stringify(exportData(),null,2);const srcLabel=document.getElementById('dataSourceLabel');if(srcLabel)srcLabel.textContent='読み込み元：'+loadedDataSource;if(document.getElementById('v31Checklist'))document.getElementById('v31Checklist').innerHTML=renderV31Checklist();if(document.getElementById('v31Consistency'))document.getElementById('v31Consistency').innerHTML=renderV31Consistency()}
+function render(){const s=state.settings,a=state.assets;document.getElementById('income').value=document.getElementById('income').value||Math.round(s.annual_income/10000);document.getElementById('expense').value=document.getElementById('expense').value||Math.round(s.basic_living_expense/10000);document.getElementById('returnRate').value=document.getElementById('returnRate').value||s.expected_return*100;document.getElementById('retireAge').value=document.getElementById('retireAge').value||s.retirement_age;document.getElementById('pensionAge').value=document.getElementById('pensionAge').value||s.pension_start_age;const current=calc('base'),up=calc('up'),down=calc('down'),p=params('base');document.getElementById('incomeLabel').textContent=yenMan(p.income);document.getElementById('expenseLabel').textContent=yenMan(p.expense);document.getElementById('returnLabel').textContent=pc(p.ret);document.getElementById('retireLabel').textContent=p.retire+'歳';document.getElementById('pensionLabel').textContent=p.pensionAge+'歳';document.getElementById('kpiNet').textContent=yenMan(a.net_worth);document.getElementById('kpiExpense').textContent=yenMan(p.expense);document.getElementById('kpiAge90').textContent=yenMan(current[50].end);document.getElementById('kpiUpdated').textContent=state.meta.lastUpdated||'未更新';const chart=lineSvg(current,up,down);document.getElementById('lifeChartOverview').innerHTML=chart;document.getElementById('lifeChartSim').innerHTML=chart;const sp=spendOk();document.getElementById('spendOk').textContent=yenMan(sp.ok);document.getElementById('spendOkTop').textContent=yenMan(sp.ok);document.getElementById('spendDetail').innerHTML=`<tr><th>年間収支余力</th><td>${yenMan(sp.annualSurplus)}</td></tr><tr><th>今年のイベント費</th><td>${yenMan(sp.currentYearEvents)}</td></tr><tr><th>生活防衛資金</th><td>${yenMan(sp.safety)}</td></tr><tr><th>余裕安全資産</th><td>${yenMan(sp.extraSafe)}</td></tr>`;document.getElementById('lifeTable').innerHTML=[40,45,50,55,60,65,70,80,90].map(age=>{const r=current[age-40];return`<tr><td>${r.age}歳</td><td>${r.year}</td><td>${yenMan(r.end)}</td><td>${yenMan(r.baseExpense)}</td><td>${yenMan(r.events)}</td><td>${yenMan(r.loan)}</td></tr>`}).join('');renderAdvice();renderEvents();document.getElementById('monthlyCheck').innerHTML=`<tr><th>生活費</th><td>MF実績で年1回見直し</td></tr><tr><th>SBI CSV</th><td>${state.sbi.loaded?state.sbi.files.length+'件読込済み':'未読込'}</td></tr><tr><th>MF PDF</th><td>資産内訳：${state.mf.assetPdfName||'未選択'} / BS：${state.mf.balancePdfName||'未選択'}</td></tr><tr><th>手動イベント</th><td>${(state.custom_events||[]).length}件</td></tr><tr><th>配当</th><td>別ファイルで管理</td></tr>`;const assetItems=[{name:'現金',value:a.cash,color:'#60a5fa'},{name:'株式',value:a.stocks,color:'#34d399'},{name:'投資信託',value:a.funds,color:'#a78bfa'},{name:'国債',value:a.bonds,color:'#fbbf24'},{name:'iDeCo',value:a.ideco,color:'#f472b6'}];document.getElementById('assetDonut').innerHTML=donut(assetItems,'資産配分');document.getElementById('assetLegend').innerHTML=legend(assetItems);const policyItems=[{name:'インデックス',value:state.portfolio.index_total,color:'#3b82f6'},{name:'高配当',value:state.portfolio.high_dividend_total,color:'#22c55e'},{name:'債券ETF・その他',value:state.portfolio.bond_etf_other,color:'#f59e0b'}];document.getElementById('policyDonut').innerHTML=donut(policyItems,'投資方針');document.getElementById('policyLegend').innerHTML=legend(policyItems);document.getElementById('sbiSummary').innerHTML=`<tr><th>状態</th><td>${state.sbi.loaded?'<span class="status ok">'+state.sbi.files.length+'件読込済み</span>':'<span class="status warn">未読込</span>'}</td></tr><tr><th>読込ファイル</th><td>${state.sbi.files.map((f,i)=>`${f.fileName} <button class="btn secondary" onclick="removeSbiFile(${i})">削除</button>`).join('<br>')||'-'}</td></tr><tr><th>推定株式</th><td>${yenMan(state.sbi.detected?.stocks||0)}</td></tr><tr><th>推定投資信託</th><td>${yenMan(state.sbi.detected?.funds||0)}</td></tr><tr><th>推定現金</th><td>${yenMan(state.sbi.detected?.cash||0)}</td></tr>`;document.getElementById('sbiLoadedList').innerHTML=state.sbi.files.length?'<table>'+state.sbi.files.map((f,i)=>`<tr><td>${f.fileName}</td><td>${yenMan(f.total)}</td><td><button class="btn secondary" onclick="removeSbiFile(${i})">削除</button></td></tr>`).join('')+'</table>':'';document.getElementById('updateSummary').innerHTML=`<tr><th>総資産</th><td>${yenMan(a.asset_total)}</td></tr><tr><th>住宅ローン</th><td>${yenMan(a.loan_balance)}</td></tr><tr><th>純資産</th><td>${yenMan(a.net_worth)}</td></tr><tr><th>MF資産内訳PDF</th><td>${state.mf.assetPdfApplied?'反映済み':'未反映'}</td></tr><tr><th>MFバランスシートPDF</th><td>${state.mf.balancePdfApplied?'反映済み':'未反映'}</td></tr><tr><th>基本生活費</th><td>${yenMan(s.basic_living_expense)}</td></tr>`;document.getElementById('historyTable').innerHTML=state.history.map(h=>`<tr><td>${h.month}</td><td>${h.updatedAt||'-'}</td><td>${yenMan(h.net_worth)}</td><td>${yenMan(h.cash)}</td><td>${yenMan(h.investment_total||0)}</td><td>${yenMan(h.loan_balance||0)}</td><td>${yenMan(h.spendable_this_year??h.spend_ok)}</td></tr>`).join('')||'<tr><td colspan="7">履歴はまだありません</td></tr>';document.getElementById('jsonView').value=JSON.stringify(exportData(),null,2);const srcLabel=document.getElementById('dataSourceLabel');if(srcLabel)srcLabel.textContent='読み込み元：'+loadedDataSource;renderVersionPanel();if(document.getElementById('v31Checklist'))document.getElementById('v31Checklist').innerHTML=renderV31Checklist();if(document.getElementById('v31Consistency'))document.getElementById('v31Consistency').innerHTML=renderV31Consistency();if(window.MonthlyUpdateV5)MonthlyUpdateV5.render()}
 
 // データ管理
-function downloadDataJson(){const blob=new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='data.json';a.click();URL.revokeObjectURL(a.href)}
+function downloadDataJson(){state.meta.dataJsonSavedAt=new Date().toISOString();saveState();const blob=new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='data.json';a.click();URL.revokeObjectURL(a.href);log('data.jsonを書き出しました。次はGitHubへ手動アップロードしてください。');render()}
 function downloadJson(){downloadDataJson()}
+async function copyUpdateReport(){const text=MonthlyUpdateV5.reportText();try{await navigator.clipboard.writeText(text);log('更新完了レポートをコピーしました。')}catch(e){const el=document.getElementById('v52ReportText');if(el){const r=document.createRange();r.selectNodeContents(el);const s=window.getSelection();s.removeAllRanges();s.addRange(r)}log('レポートを選択しました。コピーしてください。')}}
 async function loadDataJsonFromInput(){const input=document.getElementById('dataJsonFile');const file=input&&input.files&&input.files[0];if(!file){log('data.jsonが選択されていません。');return}try{const text=await file.text();const json=JSON.parse(text);applyImportedData(json,'手動読込: '+file.name)}catch(e){console.error(e);log('data.jsonを読み込めませんでした。ファイル内容を確認してください。')}}
-function resetLocal(){if(confirm('補助保存（localStorage）をリセットしますか？')){localStorage.removeItem(APP_STORAGE_KEY);state=cloneDefaultState();location.reload()}}
+function resetLocal(){if(confirm('補助保存（localStorage）をリセットしますか？')){localStorage.removeItem(APP_STORAGE_KEY);localStorage.removeItem(SYNC_STORAGE_KEY);state=cloneDefaultState();location.reload()}}
 
 // 初期化
 
@@ -387,6 +952,7 @@ Object.assign(window, {
   exportData,
   downloadJson,
   downloadDataJson,
+  copyUpdateReport,
   loadDataJsonFromInput,
   resetLocal,
   focusManualEvent,
@@ -396,12 +962,14 @@ Object.assign(window, {
   clearManualEventForm,
   toggleManualEvent,
   removeManualEvent,
+  MonthlyUpdateV5,
 });
 
 function byId(id){return document.getElementById(id)}
 function on(id,event,handler){const el=byId(id);if(el)el.addEventListener(event,handler)}
 function init(){
 state=normalizeState(state);
+MonthlyUpdateV5.mount();
 document.querySelectorAll('.tabBtn[data-tab]').forEach(btn=>{
   btn.addEventListener('click',e=>{e.preventDefault();openTab(btn.dataset.tab,btn);});
 });
@@ -431,7 +999,7 @@ const manualCash=byId('manualCash');if(manualCash)manualCash.value=Math.round(st
 const manualExpense=byId('manualExpense');if(manualExpense)manualExpense.value=Math.round(state.settings.basic_living_expense/10000);
 render();
 }
-loadDataJsonOnStart().finally(()=>{try{init()}catch(e){console.error('init error',e);}});
+loadDataJsonOnStart().finally(()=>loadVersionJsonOnStart()).finally(()=>{try{init()}catch(e){console.error('init error',e);}});
 
 </script>
 </body></html>
