@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "version": "4.0",
+    "lastUpdated": null,
+    "updateMonth": "2026-06",
+    "dataSource": "data.json",
+    "schema": "nasu-lifeplan-data-v1"
+  },
+  "assets": {
+    "asset_total": 67951942,
+    "loan_balance": 13926295,
+    "net_worth": 54025647,
+    "cash": 10278748,
+    "stocks": 20876594,
+    "funds": 30183767,
+    "bonds": 5000000,
+    "ideco": 1601888
+  },
+  "settings": {
+    "annual_income": 5100000,
+    "basic_living_expense": 4500000,
+    "mortgage_annual": 640620,
+    "mortgage_end_age": 66,
+    "expected_return": 0.05,
+    "retirement_age": 60,
+    "pension_start_age": 65,
+    "future_pension_annual": 861386,
+    "wife_pension_annual": 0,
+    "retirement_lump_sum": 15000000
+  },
+  "portfolio": {
+    "index_total": 35156957,
+    "high_dividend_total": 15245915,
+    "bond_etf_other": 1420957,
+    "jp_high_dividend": 5911130,
+    "us_high_dividend": 9334785
+  },
+  "sbi": {
+    "loaded": false,
+    "files": [],
+    "total": 0,
+    "detected": {
+      "stocks": 0,
+      "funds": 0,
+      "cash": 0
+    }
+  },
+  "mf": {
+    "assetPdfName": null,
+    "balancePdfName": null,
+    "totalDebt": null,
+    "netWorthFromMf": null,
+    "pensionAsset": null,
+    "assetPdfApplied": false,
+    "balancePdfApplied": false,
+    "assetAppliedAt": null,
+    "balanceAppliedAt": null
+  },
+  "custom_events": [],
+  "history": []
+}

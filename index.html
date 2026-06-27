@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>那須家ライフプランWebアプリ Ver4.0</title>
+<style>
+:root{--bg:#020617;--panel:#111827;--panel2:#1f2937;--line:rgba(148,163,184,.22);--text:#e5e7eb;--muted:#94a3b8;--green:#34d399;--blue:#60a5fa;--yellow:#fbbf24;--red:#fb7185;--purple:#a78bfa}*{box-sizing:border-box}body{margin:0;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;background:radial-gradient(circle at top left,rgba(96,165,250,.22),transparent 34%),radial-gradient(circle at 80% 8%,rgba(52,211,153,.16),transparent 28%),linear-gradient(135deg,#020617,#0f172a 55%,#111827)}.wrap{max-width:1280px;margin:0 auto;padding:24px 18px 64px}header{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:18px}h1{margin:0;font-size:clamp(26px,4vw,42px);letter-spacing:-.04em}.subtitle,.note{color:var(--muted);font-size:13px;line-height:1.65}.badge{border:1px solid var(--line);padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.06);white-space:nowrap;font-size:13px;color:#cbd5e1}.tabs{position:sticky;top:0;z-index:10;backdrop-filter:blur(16px);background:rgba(2,6,23,.72);border:1px solid var(--line);border-radius:18px;padding:8px;display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tabBtn{border:0;color:#cbd5e1;background:transparent;padding:9px 14px;border-radius:999px;font-size:14px;cursor:pointer}.tabBtn.active,.tabBtn:hover{background:rgba(255,255,255,.10);color:#fff}.tab{display:none}.tab.active{display:block}.grid{display:grid;gap:16px}.kpi{grid-template-columns:repeat(4,minmax(0,1fr))}.two{grid-template-columns:1.1fr .9fr}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{background:linear-gradient(180deg,rgba(31,41,55,.92),rgba(17,24,39,.92));border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 16px 40px rgba(0,0,0,.24)}.label{color:var(--muted);font-size:13px}.value{font-size:clamp(25px,3vw,36px);font-weight:800;margin:8px 0 6px;letter-spacing:-.03em}.good{color:var(--green)}.warn{color:var(--yellow)}.blue{color:var(--blue)}.red{color:var(--red)}h2{font-size:20px;margin:0 0 14px}h3{font-size:16px;margin:18px 0 10px;color:#cbd5e1}.section{margin-top:18px}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid var(--line);padding:10px 8px;font-size:13px;text-align:right;vertical-align:top}th{color:#cbd5e1;background:rgba(255,255,255,.04)}td:first-child,th:first-child{text-align:left}.lineChart{width:100%;height:auto}.gridline{stroke:rgba(148,163,184,.18);stroke-width:1}.tick{stroke:rgba(148,163,184,.5);stroke-width:1}.axis{fill:#94a3b8;font-size:11px}.line{stroke:#34d399;stroke-width:4;filter:drop-shadow(0 0 8px rgba(52,211,153,.35))}.line2{stroke:#60a5fa;stroke-width:3;stroke-dasharray:8 6}.line3{stroke:#fb7185;stroke-width:3;stroke-dasharray:5 6}.controlGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.control{border:1px solid var(--line);border-radius:16px;padding:12px;background:rgba(255,255,255,.04)}.control label{display:flex;justify-content:space-between;color:#cbd5e1;font-size:13px;margin-bottom:8px;gap:8px}input[type=range]{width:100%;accent-color:#34d399}input[type=checkbox]{accent-color:#34d399}input[type=file],input[type=number],input[type=text],textarea,select{width:100%;border:1px solid var(--line);border-radius:12px;background:rgba(2,6,23,.55);color:var(--text);padding:10px}textarea{min-height:120px;resize:vertical}.btn{border:0;border-radius:12px;padding:11px 14px;background:#2563eb;color:#fff;cursor:pointer;font-weight:700}.btn.secondary{background:rgba(255,255,255,.08);color:#cbd5e1;border:1px solid var(--line)}.btn.goodBtn{background:#059669}.btn.warnBtn{background:#d97706}.btnRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.callout{background:rgba(52,211,153,.10);border:1px solid rgba(52,211,153,.28);border-radius:18px;padding:14px;color:#d1fae5;line-height:1.65}.status{display:inline-block;padding:5px 9px;border-radius:999px;font-size:12px;border:1px solid var(--line)}.status.ok{color:#bbf7d0;background:rgba(34,197,94,.12)}.status.warn{color:#fde68a;background:rgba(245,158,11,.12)}.status.bad{color:#fecdd3;background:rgba(251,113,133,.12)}.small{font-size:12px;color:var(--muted)}.advice{display:grid;gap:10px}.adviceItem{border:1px solid var(--line);border-radius:16px;padding:13px;background:rgba(255,255,255,.04)}.adviceItem b{display:block;margin-bottom:4px}.bigUse{font-size:clamp(34px,5vw,56px);font-weight:900;letter-spacing:-.04em;margin:8px 0;color:#fbbf24}.miniGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}.mini{border:1px solid var(--line);border-radius:14px;padding:10px;background:rgba(255,255,255,.04)}.mini b{display:block;font-size:18px;margin-top:4px}.okText{color:#bbf7d0}.warnText{color:#fde68a}.chartRow{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.donut{width:210px;max-width:45vw}.chartCenter{font-weight:800;fill:#e5e7eb;font-size:17px}.chartSub{fill:#94a3b8;font-size:13px}.legend{display:grid;gap:10px;min-width:240px;flex:1}.legendItem{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px;color:#cbd5e1}.legendRight{text-align:right;font-weight:700}.legendRight span{color:var(--muted);font-size:12px;font-weight:500}.dot{width:10px;height:10px;border-radius:999px;display:inline-block;margin-right:8px}.stepper{display:grid;gap:12px}.step{border:1px solid var(--line);border-radius:18px;padding:14px;background:rgba(255,255,255,.04);display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start}.stepNo{width:34px;height:34px;border-radius:999px;background:rgba(96,165,250,.18);display:flex;align-items:center;justify-content:center;font-weight:900;color:#bfdbfe}.drop{border:2px dashed rgba(96,165,250,.55);border-radius:16px;padding:16px;background:rgba(96,165,250,.06);margin-top:10px}.preview{max-height:230px;overflow:auto;border:1px solid var(--line);border-radius:12px;margin-top:10px}.eventRow{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;border-bottom:1px solid var(--line);padding:9px 0}.timeline{display:grid;gap:8px}.timelineItem{display:grid;grid-template-columns:72px 1fr auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:10px;background:rgba(255,255,255,.04)}.timelineItem .age{color:#cbd5e1;font-weight:700}.timelineItem .amount{font-weight:800;color:#fbbf24}.logBox{background:rgba(2,6,23,.45);border:1px solid var(--line);border-radius:14px;padding:12px;min-height:78px;white-space:pre-wrap;color:#cbd5e1;font-size:13px}.jsonGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.jsonCard{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,.04)}footer{margin-top:28px;color:var(--muted);font-size:12px;text-align:center}@media(max-width:900px){header{align-items:flex-start;flex-direction:column}.kpi,.two,.three,.controlGrid,.miniGrid,.jsonGrid{grid-template-columns:1fr}.donut{width:200px}.timelineItem{grid-template-columns:1fr}}
+
+.updateCheck{border:1px solid var(--line);border-radius:16px;padding:12px;background:rgba(255,255,255,.04);margin:12px 0}
+.updateCheckRow{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding:8px 0}
+.updateCheckRow:last-child{border-bottom:0}
+.updateCheckRow b{display:block}
+
+.manualEventForm{border:1px solid var(--line);border-radius:16px;padding:12px;background:rgba(255,255,255,.04);margin:12px 0}.manualEventList{margin-top:12px}.manualEventList .eventRow{background:rgba(96,165,250,.05);border:1px solid var(--line);border-radius:12px;margin-bottom:8px;padding:10px}.dangerBtn{background:#be123c!important}.formNote{font-size:12px;color:var(--muted);line-height:1.5;margin-top:6px}
+
+
+/* Ver4.0 スマホ表示対応 */
+.mobileQuick{display:none;gap:8px;margin:-6px 0 16px;position:sticky;top:62px;z-index:9;background:rgba(2,6,23,.76);backdrop-filter:blur(12px);padding:8px;border:1px solid var(--line);border-radius:16px}
+.mobileQuick button{flex:1;border:0;border-radius:999px;padding:10px 8px;background:rgba(255,255,255,.08);color:#e5e7eb;font-weight:700;font-size:13px}
+.spouseGuide{background:linear-gradient(180deg,rgba(30,64,175,.35),rgba(17,24,39,.92))}
+.spouseGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.spouseGrid>div{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,.04)}
+@media(max-width:700px){
+  .wrap{padding:14px 10px 80px}
+  header{gap:8px;margin-bottom:12px}
+  h1{font-size:25px;line-height:1.15}
+  .subtitle{font-size:12px}
+  .badge{font-size:12px;padding:7px 10px}
+  .tabs{overflow-x:auto;flex-wrap:nowrap;border-radius:14px;padding:7px;margin-bottom:10px;top:0}
+  .tabBtn{white-space:nowrap;padding:9px 12px;font-size:13px;flex:0 0 auto}
+  .mobileQuick{display:flex}
+  .card{border-radius:18px;padding:14px}
+  .value{font-size:28px}
+  .bigUse{font-size:40px}
+  h2{font-size:18px}
+  h3{font-size:15px}
+  .kpi,.two,.three,.controlGrid,.miniGrid,.jsonGrid,.spouseGrid{grid-template-columns:1fr!important}
+  .grid{gap:12px}
+  .section{margin-top:12px}
+  .lineChart{min-width:0}
+  #lifeChartOverview,#lifeChartSim{overflow:hidden}
+  table{display:block;overflow-x:auto;white-space:nowrap}
+  th,td{font-size:12px;padding:8px 7px}
+  .control{padding:11px}
+  .control label{font-size:13px;display:block}
+  input[type=range]{height:34px}
+  input[type=file],input[type=number],input[type=text],textarea,select{font-size:16px;min-height:44px}
+  .btnRow{display:grid;grid-template-columns:1fr;gap:8px}
+  .btn{width:100%;min-height:44px}
+  .step{grid-template-columns:36px 1fr;padding:12px}
+  .stepNo{width:30px;height:30px}
+  .eventRow{grid-template-columns:1fr;gap:6px}
+  .timelineItem{grid-template-columns:1fr!important}
+  .chartRow{display:block}
+  .donut{width:190px;max-width:100%;display:block;margin:0 auto 12px}
+  .legend{min-width:0}
+  .manualEventForm .controlGrid{grid-template-columns:1fr!important}
+  .updateCheckRow{grid-template-columns:1fr;gap:4px}
+  #update,#data{font-size:13px}
+}
+
+
+/* Ver4.0 chart size fix */
+#lifeChartOverview,#lifeChartSim{width:100%;max-width:100%;overflow:hidden}
+.lineChart{display:block;width:100%;max-width:100%;height:clamp(180px,22vw,250px);min-height:180px}
+#simulation .card:first-child{min-width:0;overflow:hidden}
+#overview .card{min-width:0}
+@media(max-width:700px){
+  #lifeChartOverview,#lifeChartSim{overflow:hidden}
+  .lineChart{min-width:0!important;height:210px;max-height:210px}
+}
+
+
+/* Ver4.0 shared URL / spouse mode */
+.shareNotice{background:linear-gradient(180deg,rgba(15,118,110,.26),rgba(17,24,39,.92))}
+.shareNotice .shareList{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
+.shareNotice .shareList>div,.opsMemo{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,.04)}
+.wifeModeBar{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(52,211,153,.28);border-radius:16px;background:rgba(52,211,153,.09);padding:10px 12px;margin:-4px 0 16px;color:#d1fae5}
+.wifeModeBar b{display:block}.wifeModeBar .small{color:#a7f3d0}.wifeModeToggle{border:0;border-radius:999px;padding:10px 13px;background:#059669;color:#fff;font-weight:800;cursor:pointer;white-space:nowrap}
+body.wifeMode .husbandOnly{opacity:.72}
+body.wifeMode .wifeFocus{outline:2px solid rgba(52,211,153,.38);outline-offset:2px}
+body.wifeMode .mobileQuick{border-color:rgba(52,211,153,.45)}
+.husbandOnlyBadge{display:inline-block;margin-left:8px;padding:4px 8px;border-radius:999px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.28);color:#bfdbfe;font-size:12px;font-weight:700}
+.privacyWarn{border-color:rgba(251,191,36,.32);background:rgba(251,191,36,.08);color:#fef3c7}
+@media(max-width:700px){.shareNotice .shareList{grid-template-columns:1fr}.wifeModeBar{align-items:stretch;flex-direction:column}.wifeModeToggle{width:100%}}
+
+
+/* Ver4.0 data separation */
+.dataOps{display:grid;gap:10px;margin-top:12px}
+.dataOps .opsRow{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,.04)}
+.sourceBadge{display:inline-block;margin-top:6px;padding:5px 9px;border-radius:999px;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.28);color:#bbf7d0;font-size:12px;font-weight:800}
+@media(max-width:700px){.dataOps{gap:8px}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div><h1>那須家ライフプランWebアプリ</h1><div class="subtitle">Ver4.0：データ分離版。index.htmlは固定し、毎月の更新データはdata.jsonとして差し替えて運用します。</div></div><div class="badge">Ver4.0 / データ分離版</div></header>
+<div class="tabs">
+<button class="tabBtn active" data-tab="overview" onclick="openTab('overview',this)">ホーム</button>
+<button class="tabBtn" data-tab="simulation" onclick="openTab('simulation',this)">シミュレーション</button>
+<button class="tabBtn" data-tab="portfolio" onclick="openTab('portfolio',this)">ポートフォリオ</button>
+<button class="tabBtn" data-tab="update" onclick="openTab('update',this)">月次更新</button>
+<button class="tabBtn" data-tab="data" onclick="openTab('data',this)">データ管理</button>
+</div>
+<div class="mobileQuick">
+<button data-mobile-tab="overview">ホーム</button>
+<button data-mobile-tab="simulation">シミュレーション</button>
+<button id="mobileEventBtn" type="button">イベント追加</button>
+<button id="wifeModeBtn" type="button">妻モード</button>
+</div>
+<div class="wifeModeBar">
+  <div><b>妻向け表示モード</b><span class="small">ホーム・シミュレーション・イベント追加を中心に見るための表示です。5タブはそのまま使えます。</span></div>
+  <button id="wifeModeToggle" class="wifeModeToggle" type="button">妻向け表示 OFF</button>
+</div>
+<section id="overview" class="tab active">
+<div class="card shareNotice section wifeFocus">
+  <h2>共有URLで開く使い方</h2>
+  <div class="note">GitHub PagesやNetlifyなどに index.html と data.json を置くと、夫婦それぞれのスマホ・PCブラウザから同じURLで開けます。index.htmlは固定し、毎月の最新値は data.json を差し替えて反映します。</div>
+  <div class="shareList">
+    <div><b>妻の使い方</b><br><span class="note">スマホでホーム確認、シミュレーション、手動イベント追加を使います。</span></div>
+    <div><b>夫の使い方</b><br><span class="note">PCで月次更新を行い、更新後のdata.jsonを差し替えます。</span></div>
+    <div class="privacyWarn"><b>URL共有の注意</b><br><span class="note">家計・資産情報を含むため、完全公開URLではなく、共有範囲を限定して扱ってください。</span></div>
+  </div>
+</div>
+<div class="grid kpi"><div class="card"><div class="label">純資産</div><div class="value good" id="kpiNet">-</div><div class="note">総資産−住宅ローン。更新データにより自動反映。</div></div><div class="card"><div class="label">基本生活費</div><div class="value warn" id="kpiExpense">-</div><div class="note">インフレ自動計算なし。毎年MF実績で見直し。</div></div><div class="card"><div class="label">90歳時点資産</div><div class="value blue" id="kpiAge90">-</div><div class="note">現在の前提で自動計算。</div></div><div class="card"><div class="label">最終更新</div><div class="value good" id="kpiUpdated">未更新</div><div class="note">月次更新タブから履歴保存できます。</div></div></div>
+<div class="card spouseGuide section">
+  <h2>スマホで見るポイント</h2>
+  <div class="spouseGrid">
+    <div><b>① 今年あと使える金額</b><br><span class="note">旅行・家族イベントに使える目安を確認します。</span></div>
+    <div><b>② シミュレーション</b><br><span class="note">生活費・利回り・退職年齢などを変更できます。</span></div>
+    <div><b>③ イベント追加</b><br><span class="note">想定外の支出を入力して、将来資産への影響を確認できます。</span></div>
+  </div>
+</div>
+<div class="grid two section"><div class="card wifeFocus"><h2>今年あと使える金額</h2><div class="bigUse" id="spendOkTop">-</div><div class="note">生活防衛資金を残したうえで、今年追加で使ってもよい目安です。</div><div class="miniGrid"><div class="mini"><span class="label">旅行追加</span><b class="okText" id="miniTravel">判定中</b></div><div class="mini"><span class="label">住宅ローン</span><b class="warnText">繰上返済は急がない</b></div><div class="mini"><span class="label">更新方式</span><b class="okText">CSV/PDF方式</b></div></div></div><div class="card"><h2>AIコメント</h2><div id="aiAdvice" class="advice"></div></div></div>
+<div class="grid two section"><div class="card"><h2>ライフプラン資産推移</h2><div class="note">ホームではざっくり確認。細かい条件変更は「シミュレーション」タブで行います。</div><div id="lifeChartOverview"></div></div><div class="card"><h2>今月の確認ポイント</h2><table><tbody id="monthlyCheck"></tbody></table></div></div>
+</section>
+<section id="simulation" class="tab"><div class="grid two"><div class="card wifeFocus"><h2>シミュレーション用グラフ</h2><div class="note">イベント費や各種変数を変更したとき、グラフがどう変わるかを見る専用タブです。</div><div id="lifeChartSim"></div><table><thead><tr><th>年齢</th><th>年</th><th>資産</th><th>基本生活費</th><th>イベント費</th><th>住宅ローン</th></tr></thead><tbody id="lifeTable"></tbody></table></div><div class="card"><h2>前提変更</h2><div class="controlGrid"><div class="control"><label>年間手取り収入 <b id="incomeLabel"></b></label><input id="income" type="range" min="300" max="800" step="10"></div><div class="control"><label>基本生活費 <b id="expenseLabel"></b></label><input id="expense" type="range" min="300" max="700" step="10"></div><div class="control"><label>期待利回り <b id="returnLabel"></b></label><input id="returnRate" type="range" min="0" max="8" step="0.5"></div><div class="control"><label>退職年齢 <b id="retireLabel"></b></label><input id="retireAge" type="range" min="55" max="65" step="1"></div><div class="control"><label>年金開始 <b id="pensionLabel"></b></label><input id="pensionAge" type="range" min="60" max="70" step="1"></div><div class="control"><label>生活費の考え方 <b>毎年見直し</b></label><div class="small">インフレ率は計算しません。毎年のMF実績で基本生活費を見直します。</div></div></div></div></div><div class="grid two section"><div class="card wifeFocus"><h2>イベント費ON/OFF</h2><div id="eventList"></div>
+<h3>手動イベント追加</h3>
+<div class="manualEventForm">
+  <div class="controlGrid">
+    <div class="control"><label>イベント名</label><input type="text" id="manualEventName" placeholder="例：外壁修理"></div>
+    <div class="control"><label>カテゴリ</label><select id="manualEventCategory"><option>住宅</option><option>教育</option><option>旅行</option><option>車</option><option>家電</option><option>医療</option><option>その他</option></select></div>
+    <div class="control"><label>発生年齢</label><input type="number" id="manualEventStartAge" min="40" max="90" placeholder="例：45"></div>
+    <div class="control"><label>金額（万円）</label><input type="number" id="manualEventAmount" placeholder="例：150"></div>
+    <div class="control"><label>種類</label><select id="manualEventRepeat"><option value="once">1回限り</option><option value="yearly">毎年</option></select></div>
+    <div class="control"><label>終了年齢（毎年の場合）</label><input type="number" id="manualEventEndAge" min="40" max="90" placeholder="空欄なら発生年齢のみ"></div>
+  </div>
+  <div class="control" style="margin-top:12px"><label>メモ</label><input type="text" id="manualEventMemo" placeholder="任意：見積もり、検討理由など"></div>
+  <div class="btnRow"><button class="btn goodBtn" onclick="addManualEvent()">イベントを追加</button><button class="btn secondary" onclick="clearManualEventForm()">入力欄をクリア</button></div>
+  <div class="formNote">追加したイベントは、資産推移・イベント費タイムライン・今年使ってよい金額に反映されます。</div>
+</div>
+<h3>追加済みイベント</h3>
+<div id="manualEventList" class="manualEventList"></div>
+</div><div class="card"><h2>今年使ってよい金額</h2><div class="value warn" id="spendOk">-</div><div class="note">年間収支余力＋余裕資金の一部から算出。</div><table><tbody id="spendDetail"></tbody></table></div></div><div class="card section"><h2>イベント費タイムライン</h2><div class="note">毎年発生する費用は省略し、車買替・リフォーム・教育費の山など大きいトピックだけを表示します。</div><div id="eventTimeline" class="timeline"></div></div></section>
+<section id="portfolio" class="tab"><div class="grid two"><div class="card"><h2>資産配分</h2><div class="chartRow"><div id="assetDonut"></div><div class="legend" id="assetLegend"></div></div></div><div class="card"><h2>投資方針別</h2><div class="chartRow"><div id="policyDonut"></div><div class="legend" id="policyLegend"></div></div></div></div><div class="grid two section"><div class="card"><h2>SBI CSV読み取り結果</h2><table><tbody id="sbiSummary"></tbody></table></div><div class="card"><h2>見方</h2><div class="callout">ここは投資の細かい分析ではなく、インデックスと高配当の大きなバランスだけを見る場所です。CSV更新により、ざっくりした資産配分を更新します。</div></div></div></section>
+<section id="update" class="tab"><div class="grid two"><div class="card husbandOnly"><h2>月次更新ウィザード <span class="husbandOnlyBadge">夫がPCで実施</span></h2>
+<div class="callout">月次更新は夫がPCで行います。妻は通常、ここを操作する必要はありません。SBI CSVとマネーフォワードPDFを反映したあと、更新済みdata.jsonを書き出して差し替えると共有URL側も最新化できます。</div>
+<div class="updateCheck">
+  <h3>Ver4.0 更新チェック</h3>
+  <div id="v31Checklist"></div>
+</div>
+<div class="stepper"><div class="step"><div class="stepNo">1</div><div><b>SBI証券CSVを追加</b><div class="note">夫・妻・子ども2人分を、1個ずつ追加できます。ドラッグしても上書きされず、読込済みCSVへ累積します。</div><div class="drop" id="sbiDrop"><input type="file" id="sbiCsv" accept=".csv,text/csv" multiple><div class="small" id="sbiFileName">未選択</div></div><div class="btnRow"><button class="btn" onclick="readSbiCsv()">CSVを追加読込</button><button class="btn secondary" onclick="clearSbiPreview()">SBI読込をクリア</button></div><div id="sbiLoadedList" class="preview"></div><div id="csvPreview" class="preview"></div></div></div><div class="step"><div class="stepNo">2</div><div><b>マネーフォワードPDFを選択</b><div class="note">資産内訳PDFとバランスシートPDFを別々に認識します。同時期データなので、両方を確認して反映できます。</div><div class="controlGrid"><div class="control"><label>資産内訳PDF</label><input type="file" id="mfAssetPdf" accept=".pdf"><div class="small" id="mfAssetFileName">未選択</div></div><div class="control"><label>バランスシートPDF</label><input type="file" id="mfBalancePdf" accept=".pdf"><div class="small" id="mfBalanceFileName">未選択</div></div></div><div class="btnRow"><button class="btn secondary" onclick="applyMfAssetPdfValues()">今回PDFの資産内訳値を反映</button><button class="btn secondary" onclick="applyMfBalanceSheetValues()">今回PDFの残債・純資産を反映</button></div></div></div><div class="step"><div class="stepNo">3</div><div><b>MF実績を手入力補正</b><div class="note">PDFから確認した数字を入れます。今回のバランスシートPDFから、住宅ローン残債13,926,295円を反映できます。</div><div class="controlGrid"><div class="control"><label>総資産（万円）</label><input type="number" id="manualAssetTotal"></div><div class="control"><label>住宅ローン残高（万円）</label><input type="number" id="manualLoan"></div><div class="control"><label>現金（万円）</label><input type="number" id="manualCash"></div><div class="control"><label>基本生活費（万円/年）</label><input type="number" id="manualExpense"></div></div></div></div><div class="step"><div class="stepNo">4</div><div><b>内容確認して更新</b><div class="note">更新すると、ホーム・シミュレーション・ポートフォリオ・履歴に反映されます。ブラウザのlocalStorageにも保存します。</div><div class="btnRow"><button class="btn goodBtn" onclick="applyMonthlyUpdate()">更新を実行</button><button class="btn warnBtn" onclick="saveHistoryOnly()">履歴だけ保存</button><button class="btn secondary" onclick="downloadDataJson()">更新済みdata.jsonを書き出す</button></div></div></div></div></div><div class="card"><h2>AI解析ログ</h2><div id="updateLog" class="logBox">更新待ちです。</div>
+<h3>整合性チェック</h3>
+<div id="v31Consistency" class="updateCheck">未確認</div>
+<h3>更新後サマリー</h3><table><tbody id="updateSummary"></tbody></table></div></div></section>
+<section id="data" class="tab"><div class="grid two"><div class="card"><h2>データ管理構成</h2>
+<div class="opsMemo section">
+  <b>Ver4.0 運用メモ</b>
+  <div class="note">Ver4.0では、アプリ本体の index.html と毎月更新データの data.json を分離します。共有URL運用では index.html は基本的に固定し、夫が月次更新後に data.json だけを書き出して差し替えます。</div>
+  <span class="sourceBadge" id="dataSourceLabel">読み込み元：確認中</span>
+</div>
+<div class="opsMemo privacyWarn section">
+  <b>公開範囲の注意</b>
+  <div class="note">data.json には家計・資産情報が含まれます。完全公開URLや第三者が見られる場所への配置は避け、共有範囲を夫婦内に限定してください。ログイン機能・自動ログイン連携・金融機関ID/パスワード管理は行いません。</div>
+</div>
+<div class="dataOps">
+  <div class="opsRow"><b>data.jsonを読み込む</b><div class="note">同じフォルダの data.json は起動時に自動読込します。手元のファイルを指定して読み込むこともできます。</div><input type="file" id="dataJsonFile" accept="application/json,.json"><div class="btnRow"><button class="btn secondary" onclick="loadDataJsonFromInput()">選択したdata.jsonを読み込む</button></div></div>
+  <div class="opsRow"><b>data.jsonを書き出す</b><div class="note">月次更新後はこのボタンで data.json を保存し、共有URL側の data.json と差し替えます。</div><div class="btnRow"><button class="btn" onclick="downloadDataJson()">data.jsonを書き出す</button><button class="btn secondary" onclick="resetLocal()">補助保存をリセット</button></div></div>
+</div>
+<div class="jsonGrid"><div class="jsonCard"><b>data.json / meta</b><div class="small">バージョン・更新月・読み込み元</div></div><div class="jsonCard"><b>data.json / assets</b><div class="small">総資産・純資産・現金・住宅ローン</div></div><div class="jsonCard"><b>data.json / settings</b><div class="small">生活費・収入・利回り・年金</div></div><div class="jsonCard"><b>data.json / history</b><div class="small">毎月の更新履歴</div></div></div></div><div class="card"><h2>月次履歴</h2><table><thead><tr><th>月</th><th>純資産</th><th>現金</th><th>生活費</th><th>今年使える金額</th></tr></thead><tbody id="historyTable"></tbody></table></div></div><div class="card section"><h2>現在データ</h2><textarea id="jsonView" readonly></textarea></div></section>
+<footer>那須家ライフプランWebアプリ Ver4.0 / index.html + data.json</footer>
+</div>
+<script>
+// 那須家ライフプランWebアプリ Ver4.0
+// HTML/CSSから分離したアプリ本体です。画面構成はVer3.0系を維持しています。
+
+
+// 初期データと保存状態
+const APP_STORAGE_KEY='nasuLifePlanV40';
+const defaultState={"meta":{"version":"4.0","lastUpdated":null,"updateMonth":"2026-06","dataSource":"data.json","schema":"nasu-lifeplan-data-v1"},"assets":{"asset_total":67951942,"loan_balance":13926295,"net_worth":54025647,"cash":10278748,"stocks":20876594,"funds":30183767,"bonds":5000000,"ideco":1601888},"settings":{"annual_income":5100000,"basic_living_expense":4500000,"mortgage_annual":640620,"mortgage_end_age":66,"expected_return":0.05,"retirement_age":60,"pension_start_age":65,"future_pension_annual":861386,"wife_pension_annual":0,"retirement_lump_sum":15000000},"portfolio":{"index_total":35156957,"high_dividend_total":15245915,"bond_etf_other":1420957,"jp_high_dividend":5911130,"us_high_dividend":9334785},"sbi":{"loaded":false,"files":[],"total":0,"detected":{"stocks":0,"funds":0,"cash":0}},"mf":{"assetPdfName":null,"balancePdfName":null,"totalDebt":null,"netWorthFromMf":null,"pensionAsset":null,"assetPdfApplied":false,"balancePdfApplied":false,"assetAppliedAt":null,"balanceAppliedAt":null},"custom_events":[],"history":[]};
+let loadedDataSource='HTML内初期データ';
+let state=normalizeState(loadState());
+
+const rules=[{id:'travel',category:'旅行',name:'旅行費',amount:500000,startAge:40,endAge:79,every:1,enabled:true,type:'毎年'},{id:'home_appliance',category:'家電',name:'家電',amount:120000,startAge:40,endAge:90,every:1,enabled:true,type:'毎年'},{id:'car',category:'車・住宅',name:'車買替',amount:2000000,startAge:50,endAge:80,every:10,enabled:true,type:'10年ごと'},{id:'renovation',category:'車・住宅',name:'リフォーム',amount:5000000,startAge:60,endAge:60,every:99,enabled:true,type:'20年後'},{id:'edu_child1',category:'教育',name:'長女教育費',amount:500000,startAge:40,endAge:57,every:1,enabled:true,type:'年50万円'},{id:'edu_child2',category:'教育',name:'次女教育費',amount:500000,startAge:40,endAge:59,every:1,enabled:true,type:'年50万円'},{id:'junior_nisa',category:'教育',name:'千尋ジュニアNISA教育資金',amount:-2400000,startAge:53,endAge:53,every:99,enabled:true,type:'教育費補填'}];
+function cloneDefaultState(){return JSON.parse(JSON.stringify(defaultState))}
+function normalizeState(saved){
+  const base=cloneDefaultState();
+  const src=(saved&&typeof saved==='object')?saved:{};
+  return {
+    meta:{...base.meta,...(src.meta||{}),version:'4.0'},
+    assets:{...base.assets,...(src.assets||{})},
+    settings:{...base.settings,...(src.settings||{})},
+    portfolio:{...base.portfolio,...(src.portfolio||{})},
+    sbi:{...base.sbi,...(src.sbi||{}),files:Array.isArray(src.sbi?.files)?src.sbi.files:[],detected:{...base.sbi.detected,...(src.sbi?.detected||{})}},
+    mf:{...base.mf,...(src.mf||{}),assetPdfApplied:!!src.mf?.assetPdfApplied,balancePdfApplied:!!src.mf?.balancePdfApplied,assetAppliedAt:src.mf?.assetAppliedAt||null,balanceAppliedAt:src.mf?.balanceAppliedAt||null},
+    custom_events:Array.isArray(src.custom_events)?src.custom_events:[],
+    history:Array.isArray(src.history)?src.history:[],
+  };
+}
+function loadState(){try{const raw=localStorage.getItem(APP_STORAGE_KEY);if(raw){loadedDataSource='localStorage補助保存';return JSON.parse(raw)}return cloneDefaultState()}catch(e){console.warn('保存データを初期化します',e);return cloneDefaultState()}}
+function saveState(){state=normalizeState(state);localStorage.setItem(APP_STORAGE_KEY,JSON.stringify(state))}
+async function loadDataJsonOnStart(){
+  try{
+    const res=await fetch('data.json',{cache:'no-store'});
+    if(!res.ok)throw new Error('HTTP '+res.status);
+    const json=await res.json();
+    state=normalizeState(json);
+    loadedDataSource='data.json';
+    saveState();
+  }catch(e){
+    console.warn('data.jsonを自動読込できませんでした。HTML内初期データまたはlocalStorageで起動します。',e);
+  }
+}
+function exportData(){state=normalizeState(state);return {meta:state.meta,assets:state.assets,settings:state.settings,portfolio:state.portfolio,sbi:state.sbi,mf:state.mf,custom_events:state.custom_events,history:state.history}}
+function applyImportedData(json,source='手動読込data.json'){state=normalizeState(json);loadedDataSource=source;saveState();render();log(source+'を読み込みました。')}
+const yenMan=n=>Math.round((n||0)/10000).toLocaleString('ja-JP')+'万円';const pc=x=>((x||0)*100).toFixed(1)+'%';const num=v=>Number(String(v||'').replace(/[¥円,，\s]/g,''))||0;const manToYen=v=>Math.round((Number(v)||0)*10000);
+
+// タブ切替
+function openTab(id,btn){
+  const target=document.getElementById(id);
+  if(!target) return;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tabBtn').forEach(b=>b.classList.remove('active'));
+  target.classList.add('active');
+  const tabBtn = btn || document.querySelector(`.tabBtn[data-tab="${id}"]`);
+  if(tabBtn) tabBtn.classList.add('active');
+  try{render()}catch(e){console.error('render error after tab switch', e)}
+}
+
+// ライフプラン計算
+function isEventActive(r,age){return r.enabled!==false&&age>=r.startAge&&age<=r.endAge&&((age-r.startAge)%r.every===0)}function allEventRules(){return [...rules,...(state.custom_events||[])]}function eventAmount(age){return allEventRules().filter(r=>isEventActive(r,age)).reduce((s,r)=>s+r.amount,0)}function mortgage(age){return age<state.settings.mortgage_end_age?state.settings.mortgage_annual:0}
+function inputValue(id,fallback){const el=document.getElementById(id);return el&&el.value!==''?+el.value:fallback}
+function params(kind='base'){let income=inputValue('income',Math.round(state.settings.annual_income/10000))*10000,expense=inputValue('expense',Math.round(state.settings.basic_living_expense/10000))*10000,ret=inputValue('returnRate',state.settings.expected_return*100)/100,retire=inputValue('retireAge',state.settings.retirement_age),pensionAge=inputValue('pensionAge',state.settings.pension_start_age);if(kind==='up')return{income,expense,ret:ret+.01,retire,pensionAge};if(kind==='down')return{income,expense:expense*1.05,ret:Math.max(0,ret-.02),retire,pensionAge};return{income,expense,ret,retire,pensionAge}}
+function calc(kind='base'){const p=params(kind);let net=state.assets.net_worth,rows=[];for(let age=40;age<=90;age++){const year=2026+(age-40),salary=age<p.retire?p.income:0,pension=age>=p.pensionAge?state.settings.future_pension_annual+state.settings.wife_pension_annual:0,retirement=age===p.retire?state.settings.retirement_lump_sum:0,baseExpense=p.expense,events=eventAmount(age),loan=mortgage(age),gain=net*p.ret,end=net+salary+pension+retirement+gain-baseExpense-events-loan;rows.push({age,year,start:net,salary,pension,retirement,baseExpense,events,loan,gain,end});net=end}return rows}
+
+// グラフ描画
+function lineSvg(current,up,down){const width=900,height=320,pad=42,vals=current.map(r=>r.end),mn=Math.max(0,Math.min(...vals)*.9),mx=Math.max(...vals)*1.08,x=i=>pad+i*(width-2*pad)/(current.length-1),clamp=v=>Math.max(mn,Math.min(mx,v)),y=v=>height-pad-(clamp(v)-mn)/(mx-mn)*(height-2*pad),pts=rows=>rows.map((r,i)=>`${x(i).toFixed(1)},${y(r.end).toFixed(1)}`).join(' ');let grid='';for(let t=0;t<5;t++){const yy=pad+t*(height-2*pad)/4,val=mx-t*(mx-mn)/4;grid+=`<line x1="${pad}" y1="${yy}" x2="${width-pad}" y2="${yy}" class="gridline"/><text x="6" y="${yy+4}" class="axis">${Math.round(val/10000).toLocaleString('ja-JP')}万</text>`}[40,50,60,65,70,80,90].forEach(age=>{const i=age-40,xx=x(i);grid+=`<line x1="${xx}" y1="${height-pad}" x2="${xx}" y2="${height-pad+5}" class="tick"/><text x="${xx}" y="${height-8}" text-anchor="middle" class="axis">${age}</text>`});return`<svg viewBox="0 0 ${width} ${height}" class="lineChart">${grid}<polyline points="${pts(up)}" fill="none" class="line2"/><polyline points="${pts(down)}" fill="none" class="line3"/><polyline points="${pts(current)}" fill="none" class="line"/></svg>`}
+function spendOk(){const p=params('base'),currentYearEvents=Math.max(0,eventAmount(40)),annualSurplus=p.income-p.expense-mortgage(40)-currentYearEvents,safety=p.expense,safeAssets=state.assets.cash+state.assets.bonds,extraSafe=Math.max(0,safeAssets-safety),ok=Math.max(0,annualSurplus+Math.min(extraSafe*.25,1500000));return{ok,annualSurplus,safety,extraSafe,currentYearEvents}}
+function donut(items,title){const size=250,thick=44,cx=size/2,cy=size/2,r=size/2-14,circ=2*Math.PI*r,total=items.reduce((s,x)=>s+x.value,0)||1;let acc=0,parts='';items.forEach(it=>{const frac=it.value/total,dash=frac*circ,gap=circ-dash,off=-acc*circ;acc+=frac;parts+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${it.color}" stroke-width="${thick}" stroke-dasharray="${dash.toFixed(2)} ${gap.toFixed(2)}" stroke-dashoffset="${off.toFixed(2)}" transform="rotate(-90 ${cx} ${cy})"/>`});return`<svg class="donut" viewBox="0 0 ${size} ${size}">${parts}<text x="${cx}" y="${cy-4}" text-anchor="middle" class="chartCenter">${title}</text><text x="${cx}" y="${cy+22}" text-anchor="middle" class="chartSub">${pc(Math.max(...items.map(i=>i.value))/total)}</text></svg>`}
+function legend(items){const total=items.reduce((s,x)=>s+x.value,0)||1;return items.map(i=>`<div class="legendItem"><div><span class="dot" style="background:${i.color}"></span>${i.name}</div><div class="legendRight">${yenMan(i.value)}<br><span>${pc(i.value/total)}</span></div></div>`).join('')}
+
+// 画面描画
+function renderAdvice(){const s=spendOk(),age90=calc('base')[50].end,cashMonths=state.assets.cash/(state.settings.basic_living_expense/12);let items=[];items.push(`<div class="adviceItem"><b>今年はあと${yenMan(s.ok)}程度まで追加支出を検討できます</b><span class="note">生活防衛資金1年分を残したうえで、旅行や家族イベントに使える目安です。</span></div>`);items.push(`<div class="adviceItem"><b>90歳時点資産は${yenMan(age90)}の見込みです</b><span class="note">現在の前提では長期の安心度は保たれています。大きく悪化した月だけ確認すれば十分です。</span></div>`);items.push(`<div class="adviceItem"><b>現金は生活費${cashMonths.toFixed(1)}か月分です</b><span class="note">住宅ローン繰上返済より、手元資金と家族イベント予算の確保を優先しやすい状態です。</span></div>`);document.getElementById('aiAdvice').innerHTML=items.join('');document.getElementById('miniTravel').textContent=s.ok>=200000?'＋20万円 OK':'慎重に確認'}
+function renderEvents(){
+  document.getElementById('eventList').innerHTML=rules.map(r=>`<div class="eventRow"><div><b>${r.name}</b><div class="small">${r.category} / ${r.type} / ${yenMan(r.amount)} / ${r.startAge}〜${r.endAge}歳</div></div><label><input type="checkbox" ${r.enabled?'checked':''} onchange="toggleEvent('${r.id}',this.checked)"> 反映</label></div>`).join('');
+  const custom=state.custom_events||[];
+  const manualEl=document.getElementById('manualEventList');
+  if(manualEl){
+    manualEl.innerHTML=custom.length?custom.map(r=>`<div class="eventRow"><div><b>${r.name}</b><div class="small">${r.category} / ${r.type} / ${yenMan(r.amount)} / ${r.startAge}〜${r.endAge}歳${r.memo?' / '+r.memo:''}</div></div><div><label><input type="checkbox" ${r.enabled!==false?'checked':''} onchange="toggleManualEvent('${r.id}',this.checked)"> 反映</label><br><button class="btn secondary dangerBtn" onclick="removeManualEvent('${r.id}')">削除</button></div></div>`).join(''):'<div class="note">追加イベントはまだありません。</div>';
+  }
+  const rows=[];
+  for(let age=40;age<=90;age++){
+    const items=allEventRules().filter(r=>isEventActive(r,age));
+    const major=items.filter(r=>['car','renovation','junior_nisa'].includes(r.id)||r.manual);
+    const total=items.reduce((s,r)=>s+r.amount,0);
+    if(major.length||age>=53&&age<=60&&total>=1500000)rows.push({age,year:2026+(age-40),total,items:major.length?major:items.filter(r=>r.category==='教育')});
+  }
+  document.getElementById('eventTimeline').innerHTML=rows.map(r=>`<div class="timelineItem"><div class="age">${r.age}歳<br><span class="small">${r.year}年</span></div><div><b>${r.items.map(x=>x.name).join('、')}</b><br><span class="small">大きいトピック・手動追加イベントを表示</span></div><div class="amount">${yenMan(r.total)}</div></div>`).join('');
+}
+function toggleEvent(id,checked){const r=rules.find(x=>x.id===id);if(r)r.enabled=checked;render()}
+function addManualEvent(){
+  const name=document.getElementById('manualEventName').value.trim();
+  const category=document.getElementById('manualEventCategory').value;
+  const startAge=Number(document.getElementById('manualEventStartAge').value);
+  const amount=manToYen(document.getElementById('manualEventAmount').value);
+  const repeat=document.getElementById('manualEventRepeat').value;
+  const endAgeInput=Number(document.getElementById('manualEventEndAge').value);
+  const memo=document.getElementById('manualEventMemo').value.trim();
+  if(!name){alert('イベント名を入力してください。');return}
+  if(!startAge||startAge<40||startAge>90){alert('発生年齢は40〜90歳で入力してください。');return}
+  if(!amount){alert('金額を万円単位で入力してください。');return}
+  const endAge=repeat==='yearly'?(endAgeInput||startAge):startAge;
+  if(endAge<startAge){alert('終了年齢は発生年齢以降にしてください。');return}
+  const ev={id:'manual_'+Date.now(),manual:true,category,name,amount,startAge,endAge,every:repeat==='yearly'?1:99,enabled:true,type:repeat==='yearly'?'毎年':'1回限り',memo};
+  state.custom_events=state.custom_events||[];
+  state.custom_events.push(ev);
+  saveState();
+  clearManualEventForm();
+  log(`手動イベント「${name}」を追加しました。シミュレーションへ反映済みです。`);
+  render();
+}
+function clearManualEventForm(){['manualEventName','manualEventStartAge','manualEventAmount','manualEventEndAge','manualEventMemo'].forEach(id=>{const el=document.getElementById(id);if(el)el.value=''});const r=document.getElementById('manualEventRepeat');if(r)r.value='once'}
+function toggleManualEvent(id,checked){const r=(state.custom_events||[]).find(x=>x.id===id);if(r){r.enabled=checked;saveState();render()}}
+function removeManualEvent(id){const r=(state.custom_events||[]).find(x=>x.id===id);if(!r||confirm(`「${r.name}」を削除しますか？`)){state.custom_events=(state.custom_events||[]).filter(x=>x.id!==id);saveState();render()}}
+
+// SBI CSV追加読込
+function parseCsvLine(line){const out=[];let cur='',q=false;for(let i=0;i<line.length;i++){const ch=line[i];if(ch==='"'&&line[i+1]==='"'){cur+='"';i++;continue}if(ch==='"'){q=!q;continue}if(ch===','&&!q){out.push(cur);cur='';continue}cur+=ch}out.push(cur);return out}
+async function readFileText(file){const buf=await file.arrayBuffer();try{return new TextDecoder('shift_jis').decode(buf)}catch(e){return new TextDecoder('utf-8').decode(buf)}}
+async function readSbiCsv(){const files=[...document.getElementById('sbiCsv').files];if(!files.length){log('SBI CSVが選択されていません。');return}let lastPreview='';for(const f of files){document.getElementById('sbiFileName').textContent=f.name;const text=await readFileText(f);const lines=text.split(/\r?\n/).filter(x=>x.trim());const rows=lines.map(parseCsvLine);let detected={stocks:0,funds:0,cash:0},total=0;rows.forEach(cols=>{const joined=cols.join(' ');const nums=cols.map(num).filter(n=>n>0);const max=Math.max(0,...nums);if(max>1000000||/評価|残高|時価|金額|円/.test(joined)){if(/投信|投資信託|ファンド/.test(joined)){detected.funds+=max;total+=max}else if(/株式|国内株|米国株|ETF|外貨建|VT|VTI|VYM|HDV|SPYD/.test(joined)){detected.stocks+=max;total+=max}else if(/現金|預り金|買付余力|MRF/.test(joined)){detected.cash+=max;total+=max}}});state.sbi.files.push({fileName:f.name,rows:rows.slice(0,20),total,detected,loadedAt:new Date().toISOString()});lastPreview='<table>'+rows.slice(0,8).map(r=>'<tr>'+r.slice(0,8).map(c=>`<td>${c}</td>`).join('')+'</tr>').join('')+'</table>';}recalcSbi();document.getElementById('csvPreview').innerHTML=lastPreview;log(`SBI CSVを${files.length}件追加しました。\n累計：${state.sbi.files.length}件 / 株式 ${yenMan(state.sbi.detected.stocks)} / 投信 ${yenMan(state.sbi.detected.funds)} / 現金 ${yenMan(state.sbi.detected.cash)}\n※SBI CSVの形式により推定精度は変わります。最初は結果確認が必要です。`);saveState();render()}
+function recalcSbi(){state.sbi.detected={stocks:0,funds:0,cash:0};state.sbi.total=0;(state.sbi.files||[]).forEach(f=>{state.sbi.detected.stocks+=f.detected?.stocks||0;state.sbi.detected.funds+=f.detected?.funds||0;state.sbi.detected.cash+=f.detected?.cash||0;state.sbi.total+=f.total||0});state.sbi.loaded=(state.sbi.files||[]).length>0}
+function removeSbiFile(i){state.sbi.files.splice(i,1);recalcSbi();saveState();render()}
+
+function clearSbiPreview(){state.sbi={loaded:false,files:[],total:0,detected:{stocks:0,funds:0,cash:0}};document.getElementById('csvPreview').innerHTML='';document.getElementById('sbiLoadedList').innerHTML='';document.getElementById('sbiFileName').textContent='未選択';saveState();render()}
+
+
+// 月次更新とMoney Forward反映
+function applyMonthlyUpdate(){const a=manToYen(document.getElementById('manualAssetTotal').value),l=manToYen(document.getElementById('manualLoan').value),c=manToYen(document.getElementById('manualCash').value),e=manToYen(document.getElementById('manualExpense').value);if(a)state.assets.asset_total=a;if(l)state.assets.loan_balance=l;if(c)state.assets.cash=c;if(e){state.settings.basic_living_expense=e;document.getElementById('expense').value=Math.round(e/10000)}if(state.sbi&&state.sbi.loaded){if(state.sbi.detected.stocks)state.assets.stocks=state.sbi.detected.stocks;if(state.sbi.detected.funds)state.assets.funds=state.sbi.detected.funds;if(state.sbi.detected.cash&&!c)state.assets.cash=state.sbi.detected.cash}state.assets.net_worth=state.assets.asset_total-state.assets.loan_balance;state.meta.lastUpdated=new Date().toLocaleDateString('ja-JP');saveHistoryOnly(false);saveState();log('Ver4.0更新完了：SBI複数CSV、MF資産内訳、MFバランスシート、住宅ローン残債を確認して反映しました。HTMLを差し替えると夫婦で同じ最新データを見られます。');render()}
+function applyMfAssetPdfValues(){state.assets.asset_total=79837201;state.assets.cash=10278748;state.assets.stocks=20876594;state.assets.funds=30183767;state.assets.bonds=5000000;state.mf.pensionAsset=13487147;state.mf.assetPdfApplied=true;state.mf.assetAppliedAt=new Date().toLocaleString('ja-JP');document.getElementById('manualAssetTotal').value=Math.round(state.assets.asset_total/10000);document.getElementById('manualCash').value=Math.round(state.assets.cash/10000);state.assets.net_worth=state.assets.asset_total-state.assets.loan_balance;saveState();log('マネーフォワード資産内訳PDFの値を反映しました。');render()}
+function applyMfBalanceSheetValues(){state.assets.asset_total=79837201;state.mf.totalDebt=14712494;state.assets.loan_balance=13926295;state.mf.netWorthFromMf=65124707;state.mf.balancePdfApplied=true;state.mf.balanceAppliedAt=new Date().toLocaleString('ja-JP');state.assets.net_worth=state.assets.asset_total-state.assets.loan_balance;document.getElementById('manualAssetTotal').value=Math.round(state.assets.asset_total/10000);document.getElementById('manualLoan').value=Math.round(state.assets.loan_balance/10000);saveState();log('マネーフォワード バランスシートPDFの値を反映しました。住宅ローン残債 13,926,295円。');render()}
+
+function saveHistoryOnly(show=true){const s=spendOk();const ym=new Date().toISOString().slice(0,7);const item={month:ym,net_worth:state.assets.net_worth,cash:state.assets.cash,basic_living_expense:state.settings.basic_living_expense,spend_ok:s.ok,asset_total:state.assets.asset_total,loan_balance:state.assets.loan_balance};state.history=state.history.filter(x=>x.month!==ym);state.history.push(item);state.history.sort((a,b)=>a.month.localeCompare(b.month));state.meta.lastUpdated=new Date().toLocaleDateString('ja-JP');saveState();if(show)log('履歴を保存しました。');render()}
+
+
+// Ver3.1更新チェック
+function v31Status(ok, caution=false){
+  if(ok) return '<span class="status ok">OK</span>';
+  if(caution) return '<span class="status warn">途中</span>';
+  return '<span class="status bad">未完了</span>';
+}
+function renderV31Checklist(){
+  const count = state.sbi && state.sbi.files ? state.sbi.files.length : 0;
+  const sbiOk = count >= 4;
+  const sbiCaution = count > 0 && count < 4;
+  const assetOk = !!(state.mf && state.mf.assetPdfApplied);
+  const bsOk = !!(state.mf && state.mf.balancePdfApplied);
+  const loanOk = !!(state.assets && state.assets.loan_balance);
+  return `
+    <div class="updateCheckRow"><div><b>SBI証券CSV</b><span class="small">夫・妻・子ども2人の4口座分を追加読込</span></div><div>${v31Status(sbiOk,sbiCaution)} ${count}/4件</div></div>
+    <div class="updateCheckRow"><div><b>MF資産内訳PDF</b><span class="small">資産カテゴリの確認用 / ${state.mf.assetPdfName || 'ファイル未選択'}</span></div><div>${v31Status(assetOk)} ${state.mf.assetPdfApplied ? '反映済み' : '未反映'}</div></div>
+    <div class="updateCheckRow"><div><b>MFバランスシートPDF</b><span class="small">住宅ローン残債・純資産の確認用 / ${state.mf.balancePdfName || 'ファイル未選択'}</span></div><div>${v31Status(bsOk)} ${state.mf.balancePdfApplied ? '反映済み' : '未反映'}</div></div>
+    <div class="updateCheckRow"><div><b>住宅ローン残債</b><span class="small">バランスシートPDFの値を優先</span></div><div>${v31Status(loanOk)} ${yenMan(state.assets.loan_balance)}</div></div>
+  `;
+}
+function renderV31Consistency(){
+  const asset = state.assets.asset_total || 0;
+  const loan = state.assets.loan_balance || 0;
+  const appNet = state.assets.net_worth || 0;
+  const calcNet = asset - loan;
+  const diff = Math.abs(calcNet - appNet);
+  const mfNet = state.mf && state.mf.netWorthFromMf ? state.mf.netWorthFromMf : null;
+  const mfText = mfNet ? `MF純資産：${yenMan(mfNet)} / 差額：${yenMan(Math.abs(mfNet - appNet))}` : 'MF純資産：未反映';
+  const judge = diff <= 10000 ? 'アプリ上の総資産−住宅ローン残債と純資産は概ね一致しています。' : `差額があります：${yenMan(diff)}。`;
+  const loanSource = state.mf && state.mf.balancePdfApplied ? '住宅ローン残債：バランスシートPDF優先で反映済み' : '住宅ローン残債：手入力または初期値';
+  return `<div class="note">総資産：${yenMan(asset)} / 住宅ローン：${yenMan(loan)} / アプリ純資産：${yenMan(appNet)}<br>${mfText}<br>${loanSource}<br>${judge}</div>`;
+}
+
+function log(t){const el=document.getElementById('updateLog');if(el)el.textContent=t}
+function render(){const s=state.settings,a=state.assets;document.getElementById('income').value=document.getElementById('income').value||Math.round(s.annual_income/10000);document.getElementById('expense').value=document.getElementById('expense').value||Math.round(s.basic_living_expense/10000);document.getElementById('returnRate').value=document.getElementById('returnRate').value||s.expected_return*100;document.getElementById('retireAge').value=document.getElementById('retireAge').value||s.retirement_age;document.getElementById('pensionAge').value=document.getElementById('pensionAge').value||s.pension_start_age;const current=calc('base'),up=calc('up'),down=calc('down'),p=params('base');document.getElementById('incomeLabel').textContent=yenMan(p.income);document.getElementById('expenseLabel').textContent=yenMan(p.expense);document.getElementById('returnLabel').textContent=pc(p.ret);document.getElementById('retireLabel').textContent=p.retire+'歳';document.getElementById('pensionLabel').textContent=p.pensionAge+'歳';document.getElementById('kpiNet').textContent=yenMan(a.net_worth);document.getElementById('kpiExpense').textContent=yenMan(p.expense);document.getElementById('kpiAge90').textContent=yenMan(current[50].end);document.getElementById('kpiUpdated').textContent=state.meta.lastUpdated||'未更新';const chart=lineSvg(current,up,down);document.getElementById('lifeChartOverview').innerHTML=chart;document.getElementById('lifeChartSim').innerHTML=chart;const sp=spendOk();document.getElementById('spendOk').textContent=yenMan(sp.ok);document.getElementById('spendOkTop').textContent=yenMan(sp.ok);document.getElementById('spendDetail').innerHTML=`<tr><th>年間収支余力</th><td>${yenMan(sp.annualSurplus)}</td></tr><tr><th>今年のイベント費</th><td>${yenMan(sp.currentYearEvents)}</td></tr><tr><th>生活防衛資金</th><td>${yenMan(sp.safety)}</td></tr><tr><th>余裕安全資産</th><td>${yenMan(sp.extraSafe)}</td></tr>`;document.getElementById('lifeTable').innerHTML=[40,45,50,55,60,65,70,80,90].map(age=>{const r=current[age-40];return`<tr><td>${r.age}歳</td><td>${r.year}</td><td>${yenMan(r.end)}</td><td>${yenMan(r.baseExpense)}</td><td>${yenMan(r.events)}</td><td>${yenMan(r.loan)}</td></tr>`}).join('');renderAdvice();renderEvents();document.getElementById('monthlyCheck').innerHTML=`<tr><th>生活費</th><td>MF実績で年1回見直し</td></tr><tr><th>SBI CSV</th><td>${state.sbi.loaded?state.sbi.files.length+'件読込済み':'未読込'}</td></tr><tr><th>MF PDF</th><td>資産内訳：${state.mf.assetPdfName||'未選択'} / BS：${state.mf.balancePdfName||'未選択'}</td></tr><tr><th>手動イベント</th><td>${(state.custom_events||[]).length}件</td></tr><tr><th>配当</th><td>別ファイルで管理</td></tr>`;const assetItems=[{name:'現金',value:a.cash,color:'#60a5fa'},{name:'株式',value:a.stocks,color:'#34d399'},{name:'投資信託',value:a.funds,color:'#a78bfa'},{name:'国債',value:a.bonds,color:'#fbbf24'},{name:'iDeCo',value:a.ideco,color:'#f472b6'}];document.getElementById('assetDonut').innerHTML=donut(assetItems,'資産配分');document.getElementById('assetLegend').innerHTML=legend(assetItems);const policyItems=[{name:'インデックス',value:state.portfolio.index_total,color:'#3b82f6'},{name:'高配当',value:state.portfolio.high_dividend_total,color:'#22c55e'},{name:'債券ETF・その他',value:state.portfolio.bond_etf_other,color:'#f59e0b'}];document.getElementById('policyDonut').innerHTML=donut(policyItems,'投資方針');document.getElementById('policyLegend').innerHTML=legend(policyItems);document.getElementById('sbiSummary').innerHTML=`<tr><th>状態</th><td>${state.sbi.loaded?'<span class="status ok">'+state.sbi.files.length+'件読込済み</span>':'<span class="status warn">未読込</span>'}</td></tr><tr><th>読込ファイル</th><td>${state.sbi.files.map((f,i)=>`${f.fileName} <button class="btn secondary" onclick="removeSbiFile(${i})">削除</button>`).join('<br>')||'-'}</td></tr><tr><th>推定株式</th><td>${yenMan(state.sbi.detected?.stocks||0)}</td></tr><tr><th>推定投資信託</th><td>${yenMan(state.sbi.detected?.funds||0)}</td></tr><tr><th>推定現金</th><td>${yenMan(state.sbi.detected?.cash||0)}</td></tr>`;document.getElementById('sbiLoadedList').innerHTML=state.sbi.files.length?'<table>'+state.sbi.files.map((f,i)=>`<tr><td>${f.fileName}</td><td>${yenMan(f.total)}</td><td><button class="btn secondary" onclick="removeSbiFile(${i})">削除</button></td></tr>`).join('')+'</table>':'';document.getElementById('updateSummary').innerHTML=`<tr><th>総資産</th><td>${yenMan(a.asset_total)}</td></tr><tr><th>住宅ローン</th><td>${yenMan(a.loan_balance)}</td></tr><tr><th>純資産</th><td>${yenMan(a.net_worth)}</td></tr><tr><th>MF資産内訳PDF</th><td>${state.mf.assetPdfApplied?'反映済み':'未反映'}</td></tr><tr><th>MFバランスシートPDF</th><td>${state.mf.balancePdfApplied?'反映済み':'未反映'}</td></tr><tr><th>基本生活費</th><td>${yenMan(s.basic_living_expense)}</td></tr>`;document.getElementById('historyTable').innerHTML=state.history.map(h=>`<tr><td>${h.month}</td><td>${yenMan(h.net_worth)}</td><td>${yenMan(h.cash)}</td><td>${yenMan(h.basic_living_expense)}</td><td>${yenMan(h.spend_ok)}</td></tr>`).join('')||'<tr><td colspan="5">履歴はまだありません</td></tr>';document.getElementById('jsonView').value=JSON.stringify(exportData(),null,2);const srcLabel=document.getElementById('dataSourceLabel');if(srcLabel)srcLabel.textContent='読み込み元：'+loadedDataSource;if(document.getElementById('v31Checklist'))document.getElementById('v31Checklist').innerHTML=renderV31Checklist();if(document.getElementById('v31Consistency'))document.getElementById('v31Consistency').innerHTML=renderV31Consistency()}
+
+// データ管理
+function downloadDataJson(){const blob=new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='data.json';a.click();URL.revokeObjectURL(a.href)}
+function downloadJson(){downloadDataJson()}
+async function loadDataJsonFromInput(){const input=document.getElementById('dataJsonFile');const file=input&&input.files&&input.files[0];if(!file){log('data.jsonが選択されていません。');return}try{const text=await file.text();const json=JSON.parse(text);applyImportedData(json,'手動読込: '+file.name)}catch(e){console.error(e);log('data.jsonを読み込めませんでした。ファイル内容を確認してください。')}}
+function resetLocal(){if(confirm('補助保存（localStorage）をリセットしますか？')){localStorage.removeItem(APP_STORAGE_KEY);state=cloneDefaultState();location.reload()}}
+
+// 初期化
+
+
+function focusManualEvent(){
+  openTab('simulation', document.querySelector('.tabBtn[data-tab="simulation"]'));
+  setTimeout(()=>{
+    const el=document.getElementById('manualEventName');
+    if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.focus();}
+  },120);
+}
+function setWifeMode(on){
+  document.body.classList.toggle('wifeMode',!!on);
+  localStorage.setItem('nasuLifePlanWifeModeV34',on?'1':'0');
+  const btn=document.getElementById('wifeModeToggle');
+  if(btn)btn.textContent=on?'妻向け表示 ON':'妻向け表示 OFF';
+}
+function toggleWifeMode(){setWifeMode(!document.body.classList.contains('wifeMode'))}
+
+// HTML側のボタンから呼べるように明示公開します。
+Object.assign(window, {
+  openTab,
+  toggleEvent,
+  readSbiCsv,
+  removeSbiFile,
+  clearSbiPreview,
+  applyMonthlyUpdate,
+  applyMfAssetPdfValues,
+  applyMfBalanceSheetValues,
+  saveHistoryOnly,
+  exportData,
+  downloadJson,
+  downloadDataJson,
+  loadDataJsonFromInput,
+  resetLocal,
+  focusManualEvent,
+  setWifeMode,
+  toggleWifeMode,
+  addManualEvent,
+  clearManualEventForm,
+  toggleManualEvent,
+  removeManualEvent,
+});
+
+function byId(id){return document.getElementById(id)}
+function on(id,event,handler){const el=byId(id);if(el)el.addEventListener(event,handler)}
+function init(){
+state=normalizeState(state);
+document.querySelectorAll('.tabBtn[data-tab]').forEach(btn=>{
+  btn.addEventListener('click',e=>{e.preventDefault();openTab(btn.dataset.tab,btn);});
+});
+document.querySelectorAll('[data-mobile-tab]').forEach(btn=>{
+  btn.addEventListener('click',e=>{e.preventDefault();openTab(btn.dataset.mobileTab,document.querySelector(`.tabBtn[data-tab="${btn.dataset.mobileTab}"]`));});
+});
+const mobileEventBtn=document.getElementById('mobileEventBtn');
+if(mobileEventBtn) mobileEventBtn.addEventListener('click',e=>{e.preventDefault();focusManualEvent();});
+const wifeModeBtn=document.getElementById('wifeModeBtn');
+if(wifeModeBtn) wifeModeBtn.addEventListener('click',e=>{e.preventDefault();toggleWifeMode();});
+const wifeModeToggle=document.getElementById('wifeModeToggle');
+if(wifeModeToggle) wifeModeToggle.addEventListener('click',e=>{e.preventDefault();toggleWifeMode();});
+setWifeMode(localStorage.getItem('nasuLifePlanWifeModeV34')==='1');
+document.querySelectorAll('input[type=range]').forEach(el=>el.addEventListener('input',render));
+on('mfAssetPdf','change',e=>{const f=e.target.files[0];state.mf.assetPdfName=f?f.name:null;const label=byId('mfAssetFileName');if(label)label.textContent=f?f.name:'未選択';saveState();render()});
+on('mfBalancePdf','change',e=>{const f=e.target.files[0];state.mf.balancePdfName=f?f.name:null;const label=byId('mfBalanceFileName');if(label)label.textContent=f?f.name:'未選択';saveState();render()});
+on('sbiCsv','change',e=>{const files=[...e.target.files];const label=byId('sbiFileName');if(label)label.textContent=files.length?files.map(f=>f.name).join(' / '):'未選択'});
+const drop=byId('sbiDrop');
+if(drop){
+  drop.addEventListener('dragover',e=>{e.preventDefault();drop.style.borderColor='#34d399'});
+  drop.addEventListener('dragleave',()=>{drop.style.borderColor='rgba(96,165,250,.55)'});
+  drop.addEventListener('drop',e=>{e.preventDefault();drop.style.borderColor='rgba(96,165,250,.55)';const input=byId('sbiCsv');if(input){input.files=e.dataTransfer.files;}const label=byId('sbiFileName');if(label)label.textContent=[...e.dataTransfer.files].map(f=>f.name).join(' / ');readSbiCsv()});
+}
+const manualAssetTotal=byId('manualAssetTotal');if(manualAssetTotal)manualAssetTotal.value=Math.round(state.assets.asset_total/10000);
+const manualLoan=byId('manualLoan');if(manualLoan)manualLoan.value=Math.round(state.assets.loan_balance/10000);
+const manualCash=byId('manualCash');if(manualCash)manualCash.value=Math.round(state.assets.cash/10000);
+const manualExpense=byId('manualExpense');if(manualExpense)manualExpense.value=Math.round(state.settings.basic_living_expense/10000);
+render();
+}
+loadDataJsonOnStart().finally(()=>{try{init()}catch(e){console.error('init error',e);}});
+
+</script>
+</body></html>
