@@ -3,7 +3,7 @@
     "version": "5.4.1",
     "lastUpdated": "2026-06-27",
     "updateMonth": "2026-06",
-    "lastSyncId": "2026-06-27T16:36:17.735Z",
+    "lastSyncId": "2026-06-27T16:37:05.900Z",
     "dataSource": "data.json",
     "schema": "nasu-lifeplan-data-v1",
     "githubDataJsonUploaded": true,
@@ -34,9 +34,9 @@
       },
       "previousMonth": null,
       "previousYear": null,
-      "updatedAt": "2026-06-27T16:36:17.733Z"
+      "updatedAt": "2026-06-27T16:37:05.898Z"
     },
-    "lastUpdateTime": "01:36:17",
+    "lastUpdateTime": "01:37:05",
     "lastProcessSeconds": 0
   },
   "assets": {
@@ -545,18 +545,18 @@
     "githubAutoSyncEnabled": true,
     "githubApiUrl": "https://nasu-lifeplan-api.ef41108.workers.dev/api/update-data",
     "lastGithubSyncStatus": "success",
-    "lastGithubSyncAt": "2026-06-27T16:36:17.740Z",
+    "lastGithubSyncAt": "2026-06-27T16:37:05.907Z",
     "lastGithubCommitUrl": null,
     "lastGithubSyncMessage": "data.jsonをGitHubへ反映しました。",
     "lastCloudflareStatus": null,
-    "lastCloudflareCheckedAt": null,
+    "lastCloudflareCheckedAt": "2026-06-27T16:36:45.046Z",
     "lastCloudflareMessage": null
   },
   "custom_events": [],
   "history": [
     {
       "month": "2026-06",
-      "updatedAt": "2026-06-27T16:36:17.735Z",
+      "updatedAt": "2026-06-27T16:37:05.900Z",
       "asset_total": 79837201,
       "net_worth": 65910906,
       "cash": 10278748,
